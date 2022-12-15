@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.6.8 on linux)" generated="20221215 15:53:42.892" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="/home/mpfeifer/Documentos/robot_framework_test/STL/Test.robot">
+<test id="s1-t1" name="T-Rex ARP Test" line="24">
+<kw name="Given the ARP packets are created" library="Test_ARP">
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_0}</arg>
+<arg>ff:ff:ff:ff:ff:ff</arg>
+<msg timestamp="20221215 15:53:43.923" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
+<msg timestamp="20221215 15:53:43.923" level="INFO">${ether} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x10;\xcc\x90\x00'</msg>
+<status status="PASS" starttime="20221215 15:53:43.920" endtime="20221215 15:53:43.924"/>
+</kw>
+<kw name="Create Arp" library="packet_creator">
+<var>${arp}</var>
+<arg>192.168.50.2</arg>
+<arg>192.168.50.3</arg>
+<msg timestamp="20221215 15:53:43.924" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
+<msg timestamp="20221215 15:53:43.925" level="INFO">${arp} = b'\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x02\x00\x00\x00\x00\x00\x00\xc0\xa82\x03'</msg>
+<status status="PASS" starttime="20221215 15:53:43.924" endtime="20221215 15:53:43.925"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${arp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221215 15:53:43.926" level="INFO">${protocols} = [&lt;Ether  dst=ff:ff:ff:ff:ff:ff src=d0:00:6a:10:3b:cc |&gt;, &lt;ARP  op=who-has psrc=192.168.50.2 pdst=192.168.50.3 |&gt;]</msg>
+<status status="PASS" starttime="20221215 15:53:43.925" endtime="20221215 15:53:43.926"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_0}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20221215 15:53:43.927" level="WARN">more Calling str(pkt) on Python 3 makes no sense!</msg>
+<msg timestamp="20221215 15:53:43.927" level="INFO">${packet_0} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x10;\xcc\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x02\x00\x00\x00\x00\x00\x00\xc0\xa82\x03'</msg>
+<status status="PASS" starttime="20221215 15:53:43.926" endtime="20221215 15:53:43.927"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_0}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221215 15:53:43.931" level="INFO">${packet_0} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x10;\xcc\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x02\x00\x00\x00\x00\x00\x00\xc0\xa82\x03'</msg>
+<status status="PASS" starttime="20221215 15:53:43.928" endtime="20221215 15:53:43.931"/>
+</kw>
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_1}</arg>
+<arg>ff:ff:ff:ff:ff:ff</arg>
+<msg timestamp="20221215 15:53:43.932" level="INFO">${ether} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x106;\x90\x00'</msg>
+<status status="PASS" starttime="20221215 15:53:43.931" endtime="20221215 15:53:43.932"/>
+</kw>
+<kw name="Create Arp" library="packet_creator">
+<var>${arp}</var>
+<arg>192.168.50.3</arg>
+<arg>192.168.50.2</arg>
+<msg timestamp="20221215 15:53:43.933" level="INFO">${arp} = b'\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x03\x00\x00\x00\x00\x00\x00\xc0\xa82\x02'</msg>
+<status status="PASS" starttime="20221215 15:53:43.932" endtime="20221215 15:53:43.933"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${arp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221215 15:53:43.934" level="INFO">${protocols} = [&lt;Ether  dst=ff:ff:ff:ff:ff:ff src=d0:00:6a:10:36:3b |&gt;, &lt;ARP  op=who-has psrc=192.168.50.3 pdst=192.168.50.2 |&gt;]</msg>
+<status status="PASS" starttime="20221215 15:53:43.933" endtime="20221215 15:53:43.934"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_1}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20221215 15:53:43.935" level="INFO">${packet_1} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x106;\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x03\x00\x00\x00\x00\x00\x00\xc0\xa82\x02'</msg>
+<status status="PASS" starttime="20221215 15:53:43.934" endtime="20221215 15:53:43.935"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221215 15:53:43.937" level="INFO">${packet_1} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x106;\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x03\x00\x00\x00\x00\x00\x00\xc0\xa82\x02'</msg>
+<status status="PASS" starttime="20221215 15:53:43.935" endtime="20221215 15:53:43.937"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${duracao}</var>
+<arg>${duracao_local}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221215 15:53:43.937" level="INFO">${duracao} = </msg>
+<status status="PASS" starttime="20221215 15:53:43.937" endtime="20221215 15:53:43.937"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nome_do_protocolo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221215 15:53:43.938" level="INFO">${nome_do_protocolo} = undefined</msg>
+<status status="PASS" starttime="20221215 15:53:43.938" endtime="20221215 15:53:43.938"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${nome_do_protocolo}</var>
+<arg>ARP</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221215 15:53:43.938" level="INFO">${nome_do_protocolo} = ARP</msg>
+<status status="PASS" starttime="20221215 15:53:43.938" endtime="20221215 15:53:43.938"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nome_do_protocolo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221215 15:53:43.939" level="INFO">${nome_do_protocolo} = ARP</msg>
+<status status="PASS" starttime="20221215 15:53:43.939" endtime="20221215 15:53:43.939"/>
+</kw>
+<status status="PASS" starttime="20221215 15:53:43.920" endtime="20221215 15:53:43.939"/>
+</kw>
+<kw name="And the t-rex basic configuration is done">
+<kw name="Init" library="T-Rex_test">
+<arg>${packet_0}</arg>
+<arg>${packet_1}</arg>
+<arg>${velocidade}</arg>
+<status status="PASS" starttime="20221215 15:53:43.940" endtime="20221215 15:53:44.100"/>
+</kw>
+<status status="PASS" starttime="20221215 15:53:43.939" endtime="20221215 15:53:44.101"/>
+</kw>
+<kw name="When traffic is started through t-rex api">
+<kw name="Start Traffic" library="T-Rex_test">
+<arg>${duracao}</arg>
+<status status="FAIL" starttime="20221215 15:53:44.101" endtime="20221215 15:54:25.454"/>
+</kw>
+<status status="FAIL" starttime="20221215 15:53:44.101" endtime="20221215 15:54:25.454"/>
+</kw>
+<kw name="Then all traffic sent is received without dropped packets">
+<status status="NOT RUN" starttime="20221215 15:54:25.455" endtime="20221215 15:54:25.455"/>
+</kw>
+<kw name="And we then disconnect">
+<status status="NOT RUN" starttime="20221215 15:54:25.455" endtime="20221215 15:54:25.455"/>
+</kw>
+<status status="FAIL" starttime="20221215 15:53:43.919" endtime="20221215 15:54:25.455">Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="T-Rex ICMP Test" line="32">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20221215 15:54:25.456" endtime="20221215 15:54:25.456">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t3" name="T-Rex UDP Test" line="40">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20221215 15:54:25.456" endtime="20221215 15:54:25.457">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="T-Rex DNS Test" line="48">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20221215 15:54:25.457" endtime="20221215 15:54:25.458">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>Arquivo para testar o T-Rex</doc>
+<status status="FAIL" starttime="20221215 15:53:42.896" endtime="20221215 15:54:25.458"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221215 15:53:43.780" level="ERROR">Error in library 'T-Rex_test': Adding keyword 'Dns Get Str' failed: Keyword with same name defined multiple times.</msg>
+<msg timestamp="20221215 15:53:43.872" level="ERROR">Error in library 'packet_creator': Adding keyword 'Dns Get Str' failed: Keyword with same name defined multiple times.</msg>
+<msg timestamp="20221215 15:53:43.923" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
+<msg timestamp="20221215 15:53:43.924" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
+<msg timestamp="20221215 15:53:43.927" level="WARN">more Calling str(pkt) on Python 3 makes no sense!</msg>
+</errors>
+</robot>

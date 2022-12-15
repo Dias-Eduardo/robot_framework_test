@@ -1,0 +1,136 @@
+==============================================================================
+Test :: Arquivo para testar o T-Rex                                           
+==============================================================================
+T-Rex ICMP Test                                                       
+#	Portas configuradas!
+
+#	Comecando trafego...
+
+#	Teste do protocolo: ICMP
+
+#	Estatisticas da porta 0:
+#		Pacotes enviados: 377999990
+#		Pacotes recebidos: 378000159
+#		Velocidade de envio: 19926.125 pps
+#		Velocidade de recebimento: 19926.171875 pps
+#		Jitter: 151 microssegundos
+#		Average Latency: 409.0 microssegundos
+#		Max Latency: 4094767 microssegundos
+#		Min Lantency: 22 microssegundos
+
+#	Estatisticas da porta 1:
+#		Pacotes enviados: 377999990
+#		Pacotes recebidos: 378000453
+#		Velocidade de envio: 19926.619140625 pps
+#		Velocidade de recebimento: 19926.171875 pps
+#		Jitter: 154 microssegundos
+#		Average Latency: 410.0 microssegundos
+#		Max Latency: 4094220 microssegundos
+#		Min Lantency: 20 microssegundos
+
+#	Pacotes perdidos de 0 para 1: -463
+#	Pacotes perdidos de 1 para 0: -169
+| PASS |
+------------------------------------------------------------------------------
+T-Rex UDP Test                                                        
+#	Portas configuradas!
+
+#	Comecando trafego...
+
+#	Teste do protocolo: UDP
+
+#	Estatisticas da porta 0:
+#		Pacotes enviados: 189000001
+#		Pacotes recebidos: 75597761
+#		Velocidade de envio: 9987.724609375 pps
+#		Velocidade de recebimento: 0.0 pps
+#		Jitter: 64 microssegundos
+#		Average Latency: 114.0 microssegundos
+#		Max Latency: 14630 microssegundos
+#		Min Lantency: 24 microssegundos
+
+#	Estatisticas da porta 1:
+#		Pacotes enviados: 188999992
+#		Pacotes recebidos: 189000138
+#		Velocidade de envio: 9987.724609375 pps
+#		Velocidade de recebimento: 9987.966796875 pps
+#		Jitter: 62 microssegundos
+#		Average Latency: 125.0 microssegundos
+#		Max Latency: 8860 microssegundos
+#		Min Lantency: 23 microssegundos
+
+#	Pacotes perdidos de 0 para 1: -137
+#	Pacotes perdidos de 1 para 0: 113402231
+| FAIL |
+Keyword name cannot be empty.
+------------------------------------------------------------------------------
+T-Rex DNS Test                                                        
+#	Portas configuradas!
+
+#	Comecando trafego...
+
+#	Teste do protocolo: DNS
+
+#	Estatisticas da porta 0:
+#		Pacotes enviados: 189000005
+#		Pacotes recebidos: 112011
+#		Velocidade de envio: 9980.87890625 pps
+#		Velocidade de recebimento: 0.0 pps
+#		Jitter: 62 microssegundos
+#		Average Latency: 121.0 microssegundos
+#		Max Latency: 7803 microssegundos
+#		Min Lantency: 26 microssegundos
+
+#	Estatisticas da porta 1:
+#		Pacotes enviados: 188999995
+#		Pacotes recebidos: 112026267
+#		Velocidade de envio: 9980.87890625 pps
+#		Velocidade de recebimento: 0.49516281485557556 pps
+#		Jitter: 197481374 microssegundos
+#		Average Latency: 4054598064.0 microssegundos
+#		Max Latency: 4214539639 microssegundos
+#		Min Lantency: 1884481771 microssegundos
+
+#	Pacotes perdidos de 0 para 1: 76973738
+#	Pacotes perdidos de 1 para 0: 188887984
+| FAIL |
+Keyword name cannot be empty.
+------------------------------------------------------------------------------
+T-Rex ARP Test                                                        
+#	Portas configuradas!
+
+#	Comecando trafego...
+
+#	Teste do protocolo: ARP
+
+#	Estatisticas da porta 0:
+#		Pacotes enviados: 188999997
+#		Pacotes recebidos: 0
+#		Velocidade de envio: 9979.626953125 pps
+#		Velocidade de recebimento: 0.0 pps
+#		Jitter: 0 microssegundos
+#		Average Latency: 0.0 microssegundos
+#		Max Latency: 0 microssegundos
+#		Min Lantency: 0 microssegundos
+
+#	Estatisticas da porta 1:
+#		Pacotes enviados: 188999997
+#		Pacotes recebidos: 116
+#		Velocidade de envio: 9979.626953125 pps
+#		Velocidade de recebimento: 0.0 pps
+#		Jitter: 0 microssegundos
+#		Average Latency: 0.0 microssegundos
+#		Max Latency: 0 microssegundos
+#		Min Lantency: 0 microssegundos
+
+#	Pacotes perdidos de 0 para 1: 188999881
+#	Pacotes perdidos de 1 para 0: 188999997
+| FAIL |
+Keyword name cannot be empty.
+------------------------------------------------------------------------------
+Test :: Arquivo para testar o T-Rex                                   | FAIL |
+4 tests, 1 passed, 3 failed
+==============================================================================
+Output:  /home/mpfeifer/Documentos/robot_framework_test/STL/output.xml
+Log:     /home/mpfeifer/Documentos/robot_framework_test/STL/log.html
+Report:  /home/mpfeifer/Documentos/robot_framework_test/STL/report.html
