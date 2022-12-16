@@ -17,6 +17,7 @@ import json
 
 c = 0
 passed = 0
+duracao_teste_real = 0
 
 def init(packet_0, packet_1, velocidade):
     global c
@@ -52,17 +53,22 @@ def init(packet_0, packet_1, velocidade):
 
 def start_traffic (duracao):
     global c
-    
+    global duracao_teste_real
+
     robot_print("\n#\tComecando trafego...")
-    robot_print("#\tTeste comecado as " + str(datetime.now()))
+    horario_inicio = datetime.now()
+    robot_print("#\tTeste comecado as " + str(horario_inicio))
     c.start(ports = [0, 1], duration = duracao)                     
 
     c.wait_on_traffic(ports = [0, 1])
 
-    robot_print("#\tTeste terminado as " + str(datetime.now())) 
+    horario_termino = datetime.now()
+    robot_print("#\tTeste terminado as " + str(horario_termino))
+
+    duracao_teste_real = horario_termino - horario_inicio
 
 
-def get_lost_packets(nome_protocolo):
+def get_lost_packets():
     global c
     stats = c.get_stats()
     #robot_print(stats) # Para imprimir todo o dict das estatisticas                                                 
@@ -73,9 +79,7 @@ def get_lost_packets(nome_protocolo):
     lat_stats_1 = stats['latency'].get(8)
     lat_1 = lat_stats_1['latency']
    
-    robot_print("\n#\tTeste do protocolo: " + nome_protocolo)
-
- 
+    robot_print("\n#\tDuracao do teste: " + str(duracao_teste_real))
 
     robot_print("\n#\tEstatisticas da porta 0:")
     robot_print("#\t\tPacotes enviados: " + str(stats[0]["opackets"]))
@@ -86,6 +90,7 @@ def get_lost_packets(nome_protocolo):
     robot_print("#\t\tAverage Latency: " + str(lat_0['average']) + " microssegundos")
     robot_print("#\t\tMax Latency: " + str(lat_0['total_max']) + " microssegundos")
     robot_print("#\t\tMin Lantency: " +  str(lat_0['total_min']) + " microssegundos")
+
     robot_print("\n#\tEstatisticas da porta 1:")
     robot_print("#\t\tPacotes enviados: " + str(stats[1]["opackets"]))
     robot_print("#\t\tPacotes recebidos: " + str(stats[1]["ipackets"]))
@@ -99,6 +104,7 @@ def get_lost_packets(nome_protocolo):
     lost_0 = stats[1]["opackets"] - stats[0]["ipackets"]
     robot_print("\n#\tPacotes perdidos de 0 para 1: " + str(lost_1))
     robot_print("#\tPacotes perdidos de 1 para 0: " + str(lost_0))
+
     return lost_0 + lost_1
 
 def robot_print(msg):
