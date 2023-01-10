@@ -40,9 +40,18 @@ def init(profile_name):
 def start_traffic(multiplicador, duracao):
     global c
 
+    robot_print("\n#\tComecando trafego...")
+    horario_inicio = datetime.now()
+    robot_print("#\tTeste comecado as " + str(horario_inicio))
+
     c.start(mult = multiplicador, duration = duracao, latency_pps = 1)
 
     c.wait_on_traffic()
+
+    horario_termino = datetime.now()
+    robot_print("#\tTeste terminado as " + str(horario_termino))
+    duracao_teste_real = horario_termino - horario_inicio
+    robot_print("\n#\tDuracao do teste: " + duracao_teste_real)
 
 
 def print_stats_and_get_lost_packets():
@@ -62,7 +71,7 @@ def print_stats_and_get_lost_packets():
     udp_client_sent, udp_server_recv = client_stats.get('udps_sndbyte', 0), server_stats.get('udps_rcvbyte', 0)
     udp_server_sent, udp_client_recv = server_stats.get('udps_sndbyte', 0), client_stats.get('udps_rcvbyte', 0)
 
-
+    
 
     if (tcp_client_sent != tcp_server_recv):
         robot_print("\n#\tMuitos pacotes TCP perdidos: cliente mandou %s bytes e o servidor recebeu %s bytes" % (tcp_client_sent, tcp_server_recv))

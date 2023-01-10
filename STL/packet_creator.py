@@ -1,10 +1,18 @@
 T_REX_VERSION = "2.87"
 
 import sys
-sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy') 
+sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy')
+sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy/contrib')
+sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy/layers')
+
+from robot.api import logger # Imprimir para o console com o Robot Framework
 
 import stl_path
 from trex.stl.api import *
+import igmp
+import dhcp
+import dhcp6
+
 
 def create_ether(mac_src, mac_dst):
     return Ether(src=mac_src, dst=mac_dst)
@@ -13,6 +21,22 @@ def create_ether(mac_src, mac_dst):
 def create_ipv4(ip_src, ip_dst):
     return IP(src=ip_src, dst=ip_dst)
 
+
+def create_ipv6(ip_src, ip_dst):
+    return IPv6(src=ip_src, dst=ip_dst)
+
+
+def create_bootp(client_hw_addr):
+    return dhcp.BOOTP(chaddr=client_hw_addr, ciaddr='0.0.0.0', xid = 0x01020304, flags = 1)
+
+
+def create_dhcp():
+    return dhcp.DHCP(options=[("message-type","discover"),'end'])
+
+
+def create_dhcpv6():
+    dhcp6.DHCP6(msgtype=0,trid=0)
+   
 
 def create_udp(port_src, port_dst):
     return UDP(dport=port_dst, sport=port_src)
@@ -34,8 +58,12 @@ def create_dns():
     return  DNS(rd=1, qd=DNSQR(qname='www.eduardodias.com'))
 
 
-def create_http():
-    return HTTP()
+def create_dummy_bytes(size):
+    return Raw(RandString(size=size))
+
+
+def create_IGMP(type, gaddr):
+    return igmp.IGMP(type=type, gaddr=gaddr)
 
 
 def assemble_protocols(protocols):
@@ -44,4 +72,7 @@ def assemble_protocols(protocols):
         result_package /= protocols[i]
     return result_package
 
- 
+
+
+def robot_print(msg):
+    logger.console(msg)        
