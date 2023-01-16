@@ -1,3 +1,3 @@
 # robot_framework_test
 -----------------------------------
-dsadsadas
+Automação de testes para ferramente T-Rex utilizando a ferramenta Robot Framework.
