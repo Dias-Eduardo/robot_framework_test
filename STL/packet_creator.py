@@ -13,7 +13,7 @@ import igmp
 import dhcp
 import dhcp6
 
-# Aqui criamos os pacotes a serem enviados com Scapy
+# Aqui criamos e definimos os pacotes a serem enviados com Scapy
 
 
 def create_ether(mac_src, mac_dst):
