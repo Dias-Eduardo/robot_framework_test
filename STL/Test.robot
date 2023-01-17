@@ -9,7 +9,6 @@ Resource   Test_ARP.robot
 Resource   Test_IPv6.robot
 Resource   Test_IGMP.robot
 Resource   Test_DHCP.robot
-Resource   Test_DHCPv6.robot
 
 *** Variables ***
 ${mac_porta_0}    d0:00:6a:10:3b:cc
@@ -27,13 +26,6 @@ ${velocidade}    ${100}     # Em pacotes por segundo
 ${duracao}    ${10}    # Em segundos
 
 *** Test Cases ***
-#T-Rex DHCPv6
-#    Given the DHCPv6 packets are created
-#        And the t-rex basic configuration is done
-#    When traffic is started through t-rex api
-#    Then all traffic sent is received without dropped packets
-#        And we then disconnect
-
 
 T-Rex DHCP Test
     Given the DHCP packets are created
