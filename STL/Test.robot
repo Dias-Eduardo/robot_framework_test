@@ -1,7 +1,7 @@
 ***Settings***
 Documentation    Arquivo para testar o T-Rex
 Library    T-Rex_test.py
-Library    /opt/trex/v2.87/external_libs/scapy-2.4.3/scapy/layers/l2.py
+#Library    /opt/trex/v2.87/external_libs/scapy-2.4.3/scapy/layers/l2.py
 Resource   Test_UDP.robot
 Resource   Test_ICMP.robot
 Resource   Test_DNS.robot
@@ -11,13 +11,13 @@ Resource   Test_IGMP.robot
 Resource   Test_DHCP.robot
 
 *** Variables ***
-${mac_porta_0}    d0:00:6a:10:3b:cc
-${ip_porta_0}    192.168.50.2
+${mac_porta_0}    d0:00:6a:13:b1:9b
+${ip_porta_0}    192.168.60.4
 ${ipv6_porta_0}    fe80::5733:621:5a6d:3100
 
 
-${mac_porta_1}    d0:00:6a:10:36:3b
-${ip_porta_1}    192.168.50.3
+${mac_porta_1}    00:e0:53:40:23:cb 
+${ip_porta_1}    192.168.60.5
 ${ipv6_porta_1}    fe80::abfe:a53b:bf6f:8e08
 
 

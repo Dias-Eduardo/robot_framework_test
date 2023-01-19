@@ -1,9 +1,7 @@
-T_REX_VERSION = "2.87"
-
 import sys
-sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy')
-sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy/contrib')
-sys.path.append('/opt/trex/v' + T_REX_VERSION + '/external_libs/scapy-2.4.3/scapy/layers')
+sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy')
+sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy/contrib')
+sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy/layers')
 
 from robot.api import logger # Imprimir para o console com o Robot Framework
 
@@ -35,10 +33,6 @@ def create_bootp(client_hw_addr):
 def create_dhcp():
     return dhcp.DHCP(options=[("message-type","discover"),'end'])
 
-
-def create_dhcpv6():
-    dhcp6.DHCP6(msgtype=0,trid=0)
-   
 
 def create_udp(port_src, port_dst):
     return UDP(dport=port_dst, sport=port_src)

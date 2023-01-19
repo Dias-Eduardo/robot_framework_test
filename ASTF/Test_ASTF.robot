@@ -5,8 +5,6 @@ Resource    Test_HTTP.robot
 
 
 *** Variables ***
-${T_REX_VERSION}    2.87
-
 ${ip_porta_0}    192.168.50.2
 
 

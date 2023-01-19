@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.6 on linux)" generated="20230117 14:40:32.592" rpa="false" schemaversion="3">
-<suite id="s1" name="Test" source="/home/datacom28/Downloads/robot_framework_test-main/STL/Test.robot">
-<test id="s1-t1" name="T-Rex DHCP Test" line="38">
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20230119 14:26:50.688" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="/home/Buzzacaro/Downloads/robot_framework_test-main/STL/Test.robot">
+<test id="s1-t1" name="T-Rex DHCP Test" line="30">
 <kw name="Given the DHCP packets are created" library="Test_DHCP">
 <kw name="Create Ether" library="packet_creator">
 <var>${ether}</var>
 <arg>${mac_porta_0}</arg>
 <arg>${mac_porta_1}</arg>
-<msg timestamp="20230117 14:40:33.846" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
-<msg timestamp="20230117 14:40:33.847" level="INFO">${ether} = b'\xd0\x00j\x106;\xd0\x00j\x10;\xcc\x90\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:33.795" endtime="20230117 14:40:33.847"/>
+<msg timestamp="20230119 14:26:51.443" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:26:51.443" level="INFO">${ether} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:26:51.441" endtime="20230119 14:26:51.443"/>
 </kw>
 <kw name="Create Ipv4" library="packet_creator">
 <var>${ip}</var>
 <arg>${ip_porta_0}</arg>
 <arg>${ip_porta_1}</arg>
-<msg timestamp="20230117 14:40:33.851" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
-<msg timestamp="20230117 14:40:33.852" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x95\x93\xc0\xa82\x02\xc0\xa82\x03'</msg>
-<status status="PASS" starttime="20230117 14:40:33.848" endtime="20230117 14:40:33.853"/>
+<msg timestamp="20230119 14:26:51.444" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:26:51.444" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:26:51.444" endtime="20230119 14:26:51.445"/>
 </kw>
 <kw name="Create Udp" library="packet_creator">
 <var>${udp}</var>
 <arg>${67}</arg>
 <arg>${68}</arg>
-<msg timestamp="20230117 14:40:33.857" level="WARN">more Calling str(pkt) on Python 3 makes no sense!</msg>
-<msg timestamp="20230117 14:40:33.859" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
-<msg timestamp="20230117 14:40:33.859" level="INFO">${udp} = b'\x00C\x00D\x00\x08\x00\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:33.853" endtime="20230117 14:40:33.859"/>
+<msg timestamp="20230119 14:26:51.446" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:26:51.446" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:26:51.447" level="INFO">${udp} = b'\x00C\x00D\x00\x08\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:26:51.445" endtime="20230119 14:26:51.447"/>
 </kw>
 <kw name="Create Bootp" library="packet_creator">
 <var>${bootp}</var>
 <arg>${mac_porta_0}</arg>
-<msg timestamp="20230117 14:40:33.861" level="INFO">${bootp} = b'\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d0:00:6a:10:3b:c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x...</msg>
-<status status="PASS" starttime="20230117 14:40:33.860" endtime="20230117 14:40:33.861"/>
+<msg timestamp="20230119 14:26:51.447" level="INFO">${bootp} = b'\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d0:00:6a:13:b1:9\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x...</msg>
+<status status="PASS" starttime="20230119 14:26:51.447" endtime="20230119 14:26:51.447"/>
 </kw>
 <kw name="Create Dhcp" library="packet_creator">
 <var>${dhcp}</var>
-<msg timestamp="20230117 14:40:33.863" level="INFO">${dhcp} = b'5\x01\x01\xff'</msg>
-<status status="PASS" starttime="20230117 14:40:33.861" endtime="20230117 14:40:33.863"/>
+<msg timestamp="20230119 14:26:51.448" level="INFO">${dhcp} = b'5\x01\x01\xff'</msg>
+<status status="PASS" starttime="20230119 14:26:51.448" endtime="20230119 14:26:51.448"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${protocols}</var>
@@ -47,53 +47,53 @@
 <arg>${bootp}</arg>
 <arg>${dhcp}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230117 14:40:33.864" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:10:36:3b src=d0:00:6a:10:3b:cc |&gt;, &lt;IP  src=192.168.50.2 dst=192.168.50.3 |&gt;, &lt;UDP  sport=67 dport=68 |&gt;, &lt;BOOTP  xid=16909060 flags=? ciaddr=0.0.0.0 chaddr='d0:00:6a:10:3b:cc' |...</msg>
-<status status="PASS" starttime="20230117 14:40:33.863" endtime="20230117 14:40:33.864"/>
+<msg timestamp="20230119 14:26:51.449" level="INFO">${protocols} = [&lt;Ether  dst=00:e0:53:40:23:cb src=d0:00:6a:13:b1:9b |&gt;, &lt;IP  src=192.168.60.4 dst=192.168.60.5 |&gt;, &lt;UDP  sport=67 dport=68 |&gt;, &lt;BOOTP  xid=16909060 flags=? ciaddr=0.0.0.0 chaddr=b'd0:00:6a:13:b1:9b' ...</msg>
+<status status="PASS" starttime="20230119 14:26:51.448" endtime="20230119 14:26:51.449"/>
 </kw>
 <kw name="Assemble Protocols" library="packet_creator">
 <var>${packet_0}</var>
 <arg>${protocols}</arg>
-<msg timestamp="20230117 14:40:33.871" level="INFO">${packet_0} = b'\xd0\x00j\x106;\xd0\x00j\x10;\xcc\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x94\x86\xc0\xa82\x02\xc0\xa82\x03\x00C\x00D\x00\xfcA\xfe\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x...</msg>
-<status status="PASS" starttime="20230117 14:40:33.865" endtime="20230117 14:40:33.871"/>
+<msg timestamp="20230119 14:26:51.450" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x80\x82\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x00C\x00D\x00\xfc\xfcT\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x0...</msg>
+<status status="PASS" starttime="20230119 14:26:51.449" endtime="20230119 14:26:51.450"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${packet_0}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230117 14:40:33.898" level="INFO">${packet_0} = b'\xd0\x00j\x106;\xd0\x00j\x10;\xcc\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x94\x86\xc0\xa82\x02\xc0\xa82\x03\x00C\x00D\x00\xfcA\xfe\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x...</msg>
-<status status="PASS" starttime="20230117 14:40:33.872" endtime="20230117 14:40:33.898"/>
+<msg timestamp="20230119 14:26:51.453" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x80\x82\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x00C\x00D\x00\xfc\xfcT\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x0...</msg>
+<status status="PASS" starttime="20230119 14:26:51.451" endtime="20230119 14:26:51.453"/>
 </kw>
 <kw name="Create Ether" library="packet_creator">
 <var>${ether}</var>
 <arg>${mac_porta_1}</arg>
 <arg>${mac_porta_0}</arg>
-<msg timestamp="20230117 14:40:33.899" level="INFO">${ether} = b'\xd0\x00j\x10;\xcc\xd0\x00j\x106;\x90\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:33.898" endtime="20230117 14:40:33.900"/>
+<msg timestamp="20230119 14:26:51.454" level="INFO">${ether} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:26:51.454" endtime="20230119 14:26:51.454"/>
 </kw>
 <kw name="Create Ipv4" library="packet_creator">
 <var>${ip}</var>
 <arg>${ip_porta_1}</arg>
 <arg>${ip_porta_0}</arg>
-<msg timestamp="20230117 14:40:33.902" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x95\x93\xc0\xa82\x03\xc0\xa82\x02'</msg>
-<status status="PASS" starttime="20230117 14:40:33.900" endtime="20230117 14:40:33.902"/>
+<msg timestamp="20230119 14:26:51.455" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04'</msg>
+<status status="PASS" starttime="20230119 14:26:51.454" endtime="20230119 14:26:51.455"/>
 </kw>
 <kw name="Create Udp" library="packet_creator">
 <var>${udp}</var>
 <arg>${67}</arg>
 <arg>${68}</arg>
-<msg timestamp="20230117 14:40:33.907" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
-<msg timestamp="20230117 14:40:33.907" level="INFO">${udp} = b'\x00C\x00D\x00\x08\x00\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:33.903" endtime="20230117 14:40:33.908"/>
+<msg timestamp="20230119 14:26:51.457" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:26:51.457" level="INFO">${udp} = b'\x00C\x00D\x00\x08\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:26:51.455" endtime="20230119 14:26:51.457"/>
 </kw>
 <kw name="Create Bootp" library="packet_creator">
 <var>${bootp}</var>
 <arg>${mac_porta_1}</arg>
-<msg timestamp="20230117 14:40:33.909" level="INFO">${bootp} = b'\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d0:00:6a:10:36:3\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x...</msg>
-<status status="PASS" starttime="20230117 14:40:33.908" endtime="20230117 14:40:33.909"/>
+<msg timestamp="20230119 14:26:51.458" level="INFO">${bootp} = b'\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0000:e0:53:40:23:c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x...</msg>
+<status status="PASS" starttime="20230119 14:26:51.457" endtime="20230119 14:26:51.458"/>
 </kw>
 <kw name="Create Dhcp" library="packet_creator">
 <var>${dhcp}</var>
-<msg timestamp="20230117 14:40:33.910" level="INFO">${dhcp} = b'5\x01\x01\xff'</msg>
-<status status="PASS" starttime="20230117 14:40:33.909" endtime="20230117 14:40:33.910"/>
+<msg timestamp="20230119 14:26:51.459" level="INFO">${dhcp} = b'5\x01\x01\xff'</msg>
+<status status="PASS" starttime="20230119 14:26:51.458" endtime="20230119 14:26:51.459"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${protocols}</var>
@@ -103,67 +103,104 @@
 <arg>${bootp}</arg>
 <arg>${dhcp}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230117 14:40:33.911" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:10:3b:cc src=d0:00:6a:10:36:3b |&gt;, &lt;IP  src=192.168.50.3 dst=192.168.50.2 |&gt;, &lt;UDP  sport=67 dport=68 |&gt;, &lt;BOOTP  xid=16909060 flags=? ciaddr=0.0.0.0 chaddr='d0:00:6a:10:36:3b' |...</msg>
-<status status="PASS" starttime="20230117 14:40:33.910" endtime="20230117 14:40:33.911"/>
+<msg timestamp="20230119 14:26:51.459" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:13:b1:9b src=00:e0:53:40:23:cb |&gt;, &lt;IP  src=192.168.60.5 dst=192.168.60.4 |&gt;, &lt;UDP  sport=67 dport=68 |&gt;, &lt;BOOTP  xid=16909060 flags=? ciaddr=0.0.0.0 chaddr=b'00:e0:53:40:23:cb' ...</msg>
+<status status="PASS" starttime="20230119 14:26:51.459" endtime="20230119 14:26:51.460"/>
 </kw>
 <kw name="Assemble Protocols" library="packet_creator">
 <var>${packet_1}</var>
 <arg>${protocols}</arg>
-<msg timestamp="20230117 14:40:33.917" level="INFO">${packet_1} = b'\xd0\x00j\x10;\xcc\xd0\x00j\x106;\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x94\x86\xc0\xa82\x03\xc0\xa82\x02\x00C\x00D\x00\xfcBZ\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\...</msg>
-<status status="PASS" starttime="20230117 14:40:33.912" endtime="20230117 14:40:33.917"/>
+<msg timestamp="20230119 14:26:51.461" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x80\x82\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x00C\x00D\x00\xfcd\x1f\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x0...</msg>
+<status status="PASS" starttime="20230119 14:26:51.460" endtime="20230119 14:26:51.461"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${packet_1}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230117 14:40:33.922" level="INFO">${packet_1} = b'\xd0\x00j\x10;\xcc\xd0\x00j\x106;\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x94\x86\xc0\xa82\x03\xc0\xa82\x02\x00C\x00D\x00\xfcBZ\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\...</msg>
-<status status="PASS" starttime="20230117 14:40:33.917" endtime="20230117 14:40:33.922"/>
+<msg timestamp="20230119 14:26:51.463" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x01\x10\x00\x01\x00\x00@\x11\x80\x82\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x00C\x00D\x00\xfcd\x1f\x01\x01\x06\x00\x01\x02\x03\x04\x00\x00\x00\x01\x00\x00\x00\x0...</msg>
+<status status="PASS" starttime="20230119 14:26:51.461" endtime="20230119 14:26:51.463"/>
 </kw>
-<status status="PASS" starttime="20230117 14:40:33.795" endtime="20230117 14:40:33.923"/>
+<status status="PASS" starttime="20230119 14:26:51.440" endtime="20230119 14:26:51.463"/>
 </kw>
 <kw name="And the t-rex basic configuration is done">
 <kw name="Init" library="T-Rex_test">
 <arg>${packet_0}</arg>
 <arg>${packet_1}</arg>
 <arg>${velocidade}</arg>
-<msg timestamp="20230117 14:40:37.057" level="FAIL">TRexError: *** [RPC] - Failed to get server response from tcp://localhost:4501</msg>
-<status status="FAIL" starttime="20230117 14:40:33.925" endtime="20230117 14:40:37.057"/>
+<status status="PASS" starttime="20230119 14:26:51.464" endtime="20230119 14:26:51.637"/>
 </kw>
-<status status="FAIL" starttime="20230117 14:40:33.924" endtime="20230117 14:40:37.057"/>
+<status status="PASS" starttime="20230119 14:26:51.463" endtime="20230119 14:26:51.637"/>
 </kw>
 <kw name="When traffic is started through t-rex api">
-<status status="NOT RUN" starttime="20230117 14:40:37.058" endtime="20230117 14:40:37.058"/>
+<kw name="Start Traffic" library="T-Rex_test">
+<arg>${duracao}</arg>
+<status status="PASS" starttime="20230119 14:26:51.638" endtime="20230119 14:27:01.784"/>
+</kw>
+<status status="PASS" starttime="20230119 14:26:51.637" endtime="20230119 14:27:01.784"/>
 </kw>
 <kw name="Then all traffic sent is received without dropped packets">
-<status status="NOT RUN" starttime="20230117 14:40:37.058" endtime="20230117 14:40:37.058"/>
+<kw name="Get Lost Packets" library="T-Rex_test">
+<var>${lost_packets}</var>
+<msg timestamp="20230119 14:27:01.789" level="INFO">${lost_packets} = -12</msg>
+<status status="PASS" starttime="20230119 14:27:01.785" endtime="20230119 14:27:01.789"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${no_error}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:01.789" level="INFO">${no_error} = True</msg>
+<status status="PASS" starttime="20230119 14:27:01.789" endtime="20230119 14:27:01.789"/>
+</kw>
+<if>
+<branch type="IF" condition="${lost_packets} &gt; ${0}">
+<kw>
+<var>${no_error}=</var>
+<var>${False}</var>
+<status status="NOT RUN" starttime="20230119 14:27:01.790" endtime="20230119 14:27:01.790"/>
+</kw>
+<status status="NOT RUN" starttime="20230119 14:27:01.790" endtime="20230119 14:27:01.790"/>
+</branch>
+<status status="PASS" starttime="20230119 14:27:01.789" endtime="20230119 14:27:01.790"/>
+</if>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${no_error}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230119 14:27:01.790" endtime="20230119 14:27:01.791"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:01.784" endtime="20230119 14:27:01.791"/>
 </kw>
 <kw name="And we then disconnect">
-<status status="NOT RUN" starttime="20230117 14:40:37.059" endtime="20230117 14:40:37.059"/>
+<kw name="Disconnect" library="T-Rex_test">
+<status status="PASS" starttime="20230119 14:27:01.791" endtime="20230119 14:27:01.793"/>
 </kw>
-<status status="FAIL" starttime="20230117 14:40:33.794" endtime="20230117 14:40:37.059">TRexError: *** [RPC] - Failed to get server response from tcp://localhost:4501</status>
+<status status="PASS" starttime="20230119 14:27:01.791" endtime="20230119 14:27:01.794"/>
+</kw>
+<status status="PASS" starttime="20230119 14:26:51.440" endtime="20230119 14:27:01.794"/>
 </test>
-<test id="s1-t2" name="T-Rex UDP Test" line="46">
+<test id="s1-t2" name="T-Rex UDP Test" line="38">
 <kw name="Given the UDP packets are created" library="Test_UDP">
 <kw name="Create Ether" library="packet_creator">
 <var>${ether}</var>
 <arg>${mac_porta_0}</arg>
 <arg>${mac_porta_1}</arg>
-<msg timestamp="20230117 14:40:37.062" level="INFO">${ether} = b'\xd0\x00j\x106;\xd0\x00j\x10;\xcc\x90\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:37.061" endtime="20230117 14:40:37.062"/>
+<msg timestamp="20230119 14:27:01.797" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:01.797" level="INFO">${ether} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:01.795" endtime="20230119 14:27:01.797"/>
 </kw>
 <kw name="Create Ipv4" library="packet_creator">
 <var>${ip}</var>
 <arg>${ip_porta_0}</arg>
 <arg>${ip_porta_1}</arg>
-<msg timestamp="20230117 14:40:37.063" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x95\x93\xc0\xa82\x02\xc0\xa82\x03'</msg>
-<status status="PASS" starttime="20230117 14:40:37.062" endtime="20230117 14:40:37.063"/>
+<msg timestamp="20230119 14:27:01.798" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:01.798" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:01.797" endtime="20230119 14:27:01.798"/>
 </kw>
 <kw name="Create Udp" library="packet_creator">
 <var>${udp}</var>
 <arg>${1234}</arg>
 <arg>${4321}</arg>
-<msg timestamp="20230117 14:40:37.065" level="WARN">more No IP underlayer to compute checksum. Leaving null.</msg>
-<msg timestamp="20230117 14:40:37.066" level="INFO">${udp} = b'\x04\xd2\x10\xe1\x00\x08\x00\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:37.063" endtime="20230117 14:40:37.066"/>
+<msg timestamp="20230119 14:27:01.800" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:01.800" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:27:01.800" level="INFO">${udp} = b'\x04\xd2\x10\xe1\x00\x08\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:01.798" endtime="20230119 14:27:01.800"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${protocols}</var>
@@ -171,41 +208,42 @@
 <arg>${ip}</arg>
 <arg>${udp}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230117 14:40:37.066" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:10:36:3b src=d0:00:6a:10:3b:cc |&gt;, &lt;IP  src=192.168.50.2 dst=192.168.50.3 |&gt;, &lt;UDP  sport=1234 dport=4321 |&gt;]</msg>
-<status status="PASS" starttime="20230117 14:40:37.066" endtime="20230117 14:40:37.066"/>
+<msg timestamp="20230119 14:27:01.801" level="INFO">${protocols} = [&lt;Ether  dst=00:e0:53:40:23:cb src=d0:00:6a:13:b1:9b |&gt;, &lt;IP  src=192.168.60.4 dst=192.168.60.5 |&gt;, &lt;UDP  sport=1234 dport=4321 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:01.800" endtime="20230119 14:27:01.801"/>
 </kw>
 <kw name="Assemble Protocols" library="packet_creator">
 <var>${packet_0}</var>
 <arg>${protocols}</arg>
-<msg timestamp="20230117 14:40:37.067" level="INFO">${packet_0} = b'\xd0\x00j\x106;\xd0\x00j\x10;\xcc\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x95z\xc0\xa82\x02\xc0\xa82\x03\x04\xd2\x10\xe1\x00\x08\x04\xd5'</msg>
-<status status="PASS" starttime="20230117 14:40:37.066" endtime="20230117 14:40:37.068"/>
+<msg timestamp="20230119 14:27:01.802" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x81v\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x04\xd2\x10\xe1\x00\x08\xf0\xd0'</msg>
+<status status="PASS" starttime="20230119 14:27:01.801" endtime="20230119 14:27:01.802"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${packet_0}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230117 14:40:37.075" level="INFO">${packet_0} = b'\xd0\x00j\x106;\xd0\x00j\x10;\xcc\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x95z\xc0\xa82\x02\xc0\xa82\x03\x04\xd2\x10\xe1\x00\x08\x04\xd5'</msg>
-<status status="PASS" starttime="20230117 14:40:37.068" endtime="20230117 14:40:37.075"/>
+<msg timestamp="20230119 14:27:01.803" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x81v\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x04\xd2\x10\xe1\x00\x08\xf0\xd0'</msg>
+<status status="PASS" starttime="20230119 14:27:01.802" endtime="20230119 14:27:01.804"/>
 </kw>
 <kw name="Create Ether" library="packet_creator">
 <var>${ether}</var>
 <arg>${mac_porta_1}</arg>
 <arg>${mac_porta_0}</arg>
-<msg timestamp="20230117 14:40:37.077" level="INFO">${ether} = b'\xd0\x00j\x10;\xcc\xd0\x00j\x106;\x90\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:37.076" endtime="20230117 14:40:37.077"/>
+<msg timestamp="20230119 14:27:01.804" level="INFO">${ether} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:01.804" endtime="20230119 14:27:01.804"/>
 </kw>
 <kw name="Create Ipv4" library="packet_creator">
 <var>${ip}</var>
 <arg>${ip_porta_1}</arg>
 <arg>${ip_porta_0}</arg>
-<msg timestamp="20230117 14:40:37.079" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x95\x93\xc0\xa82\x03\xc0\xa82\x02'</msg>
-<status status="PASS" starttime="20230117 14:40:37.078" endtime="20230117 14:40:37.079"/>
+<msg timestamp="20230119 14:27:01.805" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04'</msg>
+<status status="PASS" starttime="20230119 14:27:01.805" endtime="20230119 14:27:01.805"/>
 </kw>
 <kw name="Create Udp" library="packet_creator">
 <var>${udp}</var>
 <arg>${4321}</arg>
 <arg>${1234}</arg>
-<msg timestamp="20230117 14:40:37.083" level="INFO">${udp} = b'\x10\xe1\x04\xd2\x00\x08\x00\x00'</msg>
-<status status="PASS" starttime="20230117 14:40:37.079" endtime="20230117 14:40:37.083"/>
+<msg timestamp="20230119 14:27:01.807" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:27:01.807" level="INFO">${udp} = b'\x10\xe1\x04\xd2\x00\x08\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:01.805" endtime="20230119 14:27:01.807"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>${protocols}</var>
@@ -213,99 +251,798 @@
 <arg>${ip}</arg>
 <arg>${udp}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20230117 14:40:37.084" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:10:3b:cc src=d0:00:6a:10:36:3b |&gt;, &lt;IP  src=192.168.50.3 dst=192.168.50.2 |&gt;, &lt;UDP  sport=4321 dport=1234 |&gt;]</msg>
-<status status="PASS" starttime="20230117 14:40:37.084" endtime="20230117 14:40:37.084"/>
+<msg timestamp="20230119 14:27:01.808" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:13:b1:9b src=00:e0:53:40:23:cb |&gt;, &lt;IP  src=192.168.60.5 dst=192.168.60.4 |&gt;, &lt;UDP  sport=4321 dport=1234 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:01.807" endtime="20230119 14:27:01.808"/>
 </kw>
 <kw name="Assemble Protocols" library="packet_creator">
 <var>${packet_1}</var>
 <arg>${protocols}</arg>
-<msg timestamp="20230117 14:40:37.087" level="INFO">${packet_1} = b'\xd0\x00j\x10;\xcc\xd0\x00j\x106;\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x95z\xc0\xa82\x03\xc0\xa82\x02\x10\xe1\x04\xd2\x00\x08\x04\xd5'</msg>
-<status status="PASS" starttime="20230117 14:40:37.085" endtime="20230117 14:40:37.087"/>
+<msg timestamp="20230119 14:27:01.809" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x81v\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x10\xe1\x04\xd2\x00\x08\xf0\xd0'</msg>
+<status status="PASS" starttime="20230119 14:27:01.808" endtime="20230119 14:27:01.809"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${packet_1}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230117 14:40:37.091" level="INFO">${packet_1} = b'\xd0\x00j\x10;\xcc\xd0\x00j\x106;\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x95z\xc0\xa82\x03\xc0\xa82\x02\x10\xe1\x04\xd2\x00\x08\x04\xd5'</msg>
-<status status="PASS" starttime="20230117 14:40:37.087" endtime="20230117 14:40:37.091"/>
+<msg timestamp="20230119 14:27:01.811" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x11\x81v\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x10\xe1\x04\xd2\x00\x08\xf0\xd0'</msg>
+<status status="PASS" starttime="20230119 14:27:01.809" endtime="20230119 14:27:01.811"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${nome_do_protocolo}</var>
 <arg>UDP</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230117 14:40:37.092" level="INFO">${nome_do_protocolo} = UDP</msg>
-<status status="PASS" starttime="20230117 14:40:37.091" endtime="20230117 14:40:37.092"/>
+<msg timestamp="20230119 14:27:01.812" level="INFO">${nome_do_protocolo} = UDP</msg>
+<status status="PASS" starttime="20230119 14:27:01.811" endtime="20230119 14:27:01.812"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${nome_do_protocolo}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20230117 14:40:37.093" level="INFO">${nome_do_protocolo} = UDP</msg>
-<status status="PASS" starttime="20230117 14:40:37.092" endtime="20230117 14:40:37.093"/>
+<msg timestamp="20230119 14:27:01.812" level="INFO">${nome_do_protocolo} = UDP</msg>
+<status status="PASS" starttime="20230119 14:27:01.812" endtime="20230119 14:27:01.812"/>
 </kw>
-<status status="PASS" starttime="20230117 14:40:37.061" endtime="20230117 14:40:37.093"/>
+<status status="PASS" starttime="20230119 14:27:01.795" endtime="20230119 14:27:01.813"/>
 </kw>
 <kw name="And the t-rex basic configuration is done">
 <kw name="Init" library="T-Rex_test">
 <arg>${packet_0}</arg>
 <arg>${packet_1}</arg>
 <arg>${velocidade}</arg>
-<status status="FAIL" starttime="20230117 14:40:37.095" endtime="20230117 14:40:38.666"/>
+<status status="PASS" starttime="20230119 14:27:01.813" endtime="20230119 14:27:01.987"/>
 </kw>
-<status status="FAIL" starttime="20230117 14:40:37.094" endtime="20230117 14:40:38.667"/>
+<status status="PASS" starttime="20230119 14:27:01.813" endtime="20230119 14:27:01.987"/>
 </kw>
 <kw name="When traffic is started through t-rex api">
-<status status="NOT RUN" starttime="20230117 14:40:38.667" endtime="20230117 14:40:38.668"/>
+<kw name="Start Traffic" library="T-Rex_test">
+<arg>${duracao}</arg>
+<status status="PASS" starttime="20230119 14:27:01.988" endtime="20230119 14:27:12.124"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:01.987" endtime="20230119 14:27:12.124"/>
 </kw>
 <kw name="Then all traffic sent is received without dropped packets">
-<status status="NOT RUN" starttime="20230117 14:40:38.668" endtime="20230117 14:40:38.668"/>
+<kw name="Get Lost Packets" library="T-Rex_test">
+<var>${lost_packets}</var>
+<msg timestamp="20230119 14:27:12.129" level="INFO">${lost_packets} = -12</msg>
+<status status="PASS" starttime="20230119 14:27:12.125" endtime="20230119 14:27:12.129"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${no_error}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:12.129" level="INFO">${no_error} = True</msg>
+<status status="PASS" starttime="20230119 14:27:12.129" endtime="20230119 14:27:12.129"/>
+</kw>
+<if>
+<branch type="IF" condition="${lost_packets} &gt; ${0}">
+<kw>
+<var>${no_error}=</var>
+<var>${False}</var>
+<status status="NOT RUN" starttime="20230119 14:27:12.130" endtime="20230119 14:27:12.130"/>
+</kw>
+<status status="NOT RUN" starttime="20230119 14:27:12.130" endtime="20230119 14:27:12.130"/>
+</branch>
+<status status="PASS" starttime="20230119 14:27:12.129" endtime="20230119 14:27:12.130"/>
+</if>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${no_error}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230119 14:27:12.130" endtime="20230119 14:27:12.130"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:12.124" endtime="20230119 14:27:12.130"/>
 </kw>
 <kw name="And we then disconnect">
-<status status="NOT RUN" starttime="20230117 14:40:38.669" endtime="20230117 14:40:38.669"/>
+<kw name="Disconnect" library="T-Rex_test">
+<status status="PASS" starttime="20230119 14:27:12.131" endtime="20230119 14:27:12.133"/>
 </kw>
-<status status="FAIL" starttime="20230117 14:40:37.060" endtime="20230117 14:40:38.669">Execution terminated by signal</status>
+<status status="PASS" starttime="20230119 14:27:12.131" endtime="20230119 14:27:12.133"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:01.794" endtime="20230119 14:27:12.133"/>
 </test>
-<test id="s1-t3" name="T-Rex IPv6 Test" line="54">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20230117 14:40:38.670" endtime="20230117 14:40:38.671">Test execution stopped due to a fatal error.</status>
+<test id="s1-t3" name="T-Rex IPv6 Test" line="46">
+<kw name="Given the IPv6 packets are created" library="Test_IPv6">
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_0}</arg>
+<arg>${mac_porta_1}</arg>
+<msg timestamp="20230119 14:27:12.135" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:12.135" level="INFO">${ether} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:12.134" endtime="20230119 14:27:12.135"/>
+</kw>
+<kw name="Create Ipv6" library="packet_creator">
+<var>${ip}</var>
+<arg>${ipv6_porta_0}</arg>
+<arg>${ipv6_porta_1}</arg>
+<msg timestamp="20230119 14:27:12.136" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:12.136" level="INFO">${ip} = b'`\x00\x00\x00\x00\x00;@\xfe\x80\x00\x00\x00\x00\x00\x00W3\x06!Zm1\x00\xfe\x80\x00\x00\x00\x00\x00\x00\xab\xfe\xa5;\xbfo\x8e\x08'</msg>
+<status status="PASS" starttime="20230119 14:27:12.135" endtime="20230119 14:27:12.136"/>
+</kw>
+<kw name="Create Dummy Bytes" library="packet_creator">
+<var>${dummy_bytes}</var>
+<arg>${50}</arg>
+<msg timestamp="20230119 14:27:12.137" level="FAIL">TypeError: object of type 'RandString' has no len()</msg>
+<status status="FAIL" starttime="20230119 14:27:12.136" endtime="20230119 14:27:12.138"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${dummy_bytes}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:12.138" endtime="20230119 14:27:12.138"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_0}</var>
+<arg>${protocols}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:12.138" endtime="20230119 14:27:12.138"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_0}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:12.138" endtime="20230119 14:27:12.138"/>
+</kw>
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_1}</arg>
+<arg>${mac_porta_0}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:12.138" endtime="20230119 14:27:12.138"/>
+</kw>
+<kw name="Create Ipv6" library="packet_creator">
+<var>${ip}</var>
+<arg>${ipv6_porta_1}</arg>
+<arg>${ipv6_porta_0}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:12.139" endtime="20230119 14:27:12.139"/>
+</kw>
+<kw name="Create Dummy Bytes" library="packet_creator">
+<var>${dummy_bytes}</var>
+<arg>${50}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:12.139" endtime="20230119 14:27:12.139"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${dummy_bytes}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:12.139" endtime="20230119 14:27:12.139"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_1}</var>
+<arg>${protocols}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:12.139" endtime="20230119 14:27:12.139"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:12.139" endtime="20230119 14:27:12.139"/>
+</kw>
+<status status="FAIL" starttime="20230119 14:27:12.134" endtime="20230119 14:27:12.140"/>
+</kw>
+<kw name="And the t-rex basic configuration is done">
+<status status="NOT RUN" starttime="20230119 14:27:12.140" endtime="20230119 14:27:12.140"/>
+</kw>
+<kw name="When traffic is started through t-rex api">
+<status status="NOT RUN" starttime="20230119 14:27:12.140" endtime="20230119 14:27:12.140"/>
+</kw>
+<kw name="Then all traffic sent is received without dropped packets">
+<status status="NOT RUN" starttime="20230119 14:27:12.140" endtime="20230119 14:27:12.140"/>
+</kw>
+<kw name="And we then disconnect">
+<status status="NOT RUN" starttime="20230119 14:27:12.141" endtime="20230119 14:27:12.141"/>
+</kw>
+<status status="FAIL" starttime="20230119 14:27:12.133" endtime="20230119 14:27:12.141">TypeError: object of type 'RandString' has no len()</status>
 </test>
-<test id="s1-t4" name="T-Rex IGMP Test" line="62">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20230117 14:40:38.671" endtime="20230117 14:40:38.672">Test execution stopped due to a fatal error.</status>
+<test id="s1-t4" name="T-Rex IGMP Test" line="54">
+<kw name="Given the IGMP packets are created" library="Test_IGMP">
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_0}</arg>
+<arg>${mac_porta_1}</arg>
+<msg timestamp="20230119 14:27:12.143" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:12.143" level="INFO">${ether} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:12.142" endtime="20230119 14:27:12.143"/>
+</kw>
+<kw name="Create Ipv4" library="packet_creator">
+<var>${ip}</var>
+<arg>${ip_porta_0}</arg>
+<arg>${ip_porta_1}</arg>
+<msg timestamp="20230119 14:27:12.144" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.143" endtime="20230119 14:27:12.144"/>
+</kw>
+<kw name="Create IGMP" library="packet_creator">
+<var>${igmp}</var>
+<arg>${0x12}</arg>
+<arg>${ip_porta_1}</arg>
+<msg timestamp="20230119 14:27:12.145" level="INFO">${igmp} = b'\x12\x14\xf1=\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.144" endtime="20230119 14:27:12.145"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${igmp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230119 14:27:12.146" level="INFO">${protocols} = [&lt;Ether  dst=00:e0:53:40:23:cb src=d0:00:6a:13:b1:9b |&gt;, &lt;IP  src=192.168.60.4 dst=192.168.60.5 |&gt;, &lt;IGMP  type=Version 1 - Membership Report gaddr=192.168.60.5 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:12.145" endtime="20230119 14:27:12.146"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_0}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20230119 14:27:12.147" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x02\x81\x85\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x12\x14\xf1=\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.146" endtime="20230119 14:27:12.147"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_0}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:12.148" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x02\x81\x85\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x12\x14\xf1=\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.147" endtime="20230119 14:27:12.148"/>
+</kw>
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_1}</arg>
+<arg>${mac_porta_0}</arg>
+<msg timestamp="20230119 14:27:12.149" level="INFO">${ether} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:12.148" endtime="20230119 14:27:12.149"/>
+</kw>
+<kw name="Create Ipv4" library="packet_creator">
+<var>${ip}</var>
+<arg>${ip_porta_1}</arg>
+<arg>${ip_porta_0}</arg>
+<msg timestamp="20230119 14:27:12.150" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04'</msg>
+<status status="PASS" starttime="20230119 14:27:12.149" endtime="20230119 14:27:12.150"/>
+</kw>
+<kw name="Create IGMP" library="packet_creator">
+<var>${igmp}</var>
+<arg>${0x12}</arg>
+<arg>${ip_porta_1}</arg>
+<msg timestamp="20230119 14:27:12.151" level="INFO">${igmp} = b'\x12\x14\xf1=\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.150" endtime="20230119 14:27:12.151"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${igmp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230119 14:27:12.152" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:13:b1:9b src=00:e0:53:40:23:cb |&gt;, &lt;IP  src=192.168.60.5 dst=192.168.60.4 |&gt;, &lt;IGMP  type=Version 1 - Membership Report gaddr=192.168.60.5 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:12.151" endtime="20230119 14:27:12.152"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_1}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20230119 14:27:12.153" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x02\x81\x85\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x12\x14\xf1=\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.152" endtime="20230119 14:27:12.153"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:12.154" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x02\x81\x85\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x12\x14\xf1=\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:12.153" endtime="20230119 14:27:12.154"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:12.142" endtime="20230119 14:27:12.154"/>
+</kw>
+<kw name="And the t-rex basic configuration is done">
+<kw name="Init" library="T-Rex_test">
+<arg>${packet_0}</arg>
+<arg>${packet_1}</arg>
+<arg>${velocidade}</arg>
+<status status="PASS" starttime="20230119 14:27:12.155" endtime="20230119 14:27:12.328"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:12.155" endtime="20230119 14:27:12.328"/>
+</kw>
+<kw name="When traffic is started through t-rex api">
+<kw name="Start Traffic" library="T-Rex_test">
+<arg>${duracao}</arg>
+<status status="PASS" starttime="20230119 14:27:12.328" endtime="20230119 14:27:22.465"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:12.328" endtime="20230119 14:27:22.465"/>
+</kw>
+<kw name="Then all traffic sent is received without dropped packets">
+<kw name="Get Lost Packets" library="T-Rex_test">
+<var>${lost_packets}</var>
+<msg timestamp="20230119 14:27:22.469" level="INFO">${lost_packets} = -12</msg>
+<status status="PASS" starttime="20230119 14:27:22.466" endtime="20230119 14:27:22.469"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${no_error}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:22.470" level="INFO">${no_error} = True</msg>
+<status status="PASS" starttime="20230119 14:27:22.470" endtime="20230119 14:27:22.470"/>
+</kw>
+<if>
+<branch type="IF" condition="${lost_packets} &gt; ${0}">
+<kw>
+<var>${no_error}=</var>
+<var>${False}</var>
+<status status="NOT RUN" starttime="20230119 14:27:22.470" endtime="20230119 14:27:22.471"/>
+</kw>
+<status status="NOT RUN" starttime="20230119 14:27:22.470" endtime="20230119 14:27:22.471"/>
+</branch>
+<status status="PASS" starttime="20230119 14:27:22.470" endtime="20230119 14:27:22.471"/>
+</if>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${no_error}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230119 14:27:22.471" endtime="20230119 14:27:22.471"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:22.465" endtime="20230119 14:27:22.471"/>
+</kw>
+<kw name="And we then disconnect">
+<kw name="Disconnect" library="T-Rex_test">
+<status status="PASS" starttime="20230119 14:27:22.472" endtime="20230119 14:27:22.474"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:22.471" endtime="20230119 14:27:22.474"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:12.141" endtime="20230119 14:27:22.474"/>
 </test>
-<test id="s1-t5" name="T-Rex ARP Test" line="70">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20230117 14:40:38.673" endtime="20230117 14:40:38.674">Test execution stopped due to a fatal error.</status>
+<test id="s1-t5" name="T-Rex ARP Test" line="62">
+<kw name="Given the ARP packets are created" library="Test_ARP">
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_0}</arg>
+<arg>ff:ff:ff:ff:ff:ff</arg>
+<msg timestamp="20230119 14:27:22.476" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:22.476" level="INFO">${ether} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:22.475" endtime="20230119 14:27:22.476"/>
+</kw>
+<kw name="Create Arp" library="packet_creator">
+<var>${arp}</var>
+<arg>192.168.50.2</arg>
+<arg>192.168.50.3</arg>
+<msg timestamp="20230119 14:27:22.477" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:22.477" level="INFO">${arp} = b'\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x02\x00\x00\x00\x00\x00\x00\xc0\xa82\x03'</msg>
+<status status="PASS" starttime="20230119 14:27:22.476" endtime="20230119 14:27:22.478"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${arp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230119 14:27:22.478" level="INFO">${protocols} = [&lt;Ether  dst=ff:ff:ff:ff:ff:ff src=d0:00:6a:13:b1:9b |&gt;, &lt;ARP  op=who-has psrc=192.168.50.2 pdst=192.168.50.3 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:22.478" endtime="20230119 14:27:22.478"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_0}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20230119 14:27:22.479" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:22.480" level="INFO">${packet_0} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x13\xb1\x9b\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x02\x00\x00\x00\x00\x00\x00\xc0\xa82\x03'</msg>
+<status status="PASS" starttime="20230119 14:27:22.479" endtime="20230119 14:27:22.480"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_0}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:22.481" level="INFO">${packet_0} = b'\xff\xff\xff\xff\xff\xff\xd0\x00j\x13\xb1\x9b\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x02\x00\x00\x00\x00\x00\x00\xc0\xa82\x03'</msg>
+<status status="PASS" starttime="20230119 14:27:22.480" endtime="20230119 14:27:22.481"/>
+</kw>
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_1}</arg>
+<arg>ff:ff:ff:ff:ff:ff</arg>
+<msg timestamp="20230119 14:27:22.482" level="INFO">${ether} = b'\xff\xff\xff\xff\xff\xff\x00\xe0S@#\xcb\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:22.481" endtime="20230119 14:27:22.482"/>
+</kw>
+<kw name="Create Arp" library="packet_creator">
+<var>${arp}</var>
+<arg>192.168.50.3</arg>
+<arg>192.168.50.2</arg>
+<msg timestamp="20230119 14:27:22.483" level="INFO">${arp} = b'\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x03\x00\x00\x00\x00\x00\x00\xc0\xa82\x02'</msg>
+<status status="PASS" starttime="20230119 14:27:22.482" endtime="20230119 14:27:22.483"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${arp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230119 14:27:22.483" level="INFO">${protocols} = [&lt;Ether  dst=ff:ff:ff:ff:ff:ff src=00:e0:53:40:23:cb |&gt;, &lt;ARP  op=who-has psrc=192.168.50.3 pdst=192.168.50.2 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:22.483" endtime="20230119 14:27:22.483"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_1}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20230119 14:27:22.484" level="INFO">${packet_1} = b'\xff\xff\xff\xff\xff\xff\x00\xe0S@#\xcb\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x03\x00\x00\x00\x00\x00\x00\xc0\xa82\x02'</msg>
+<status status="PASS" starttime="20230119 14:27:22.483" endtime="20230119 14:27:22.484"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:22.485" level="INFO">${packet_1} = b'\xff\xff\xff\xff\xff\xff\x00\xe0S@#\xcb\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\x00\x00\x00\x00\x00\x00\xc0\xa82\x03\x00\x00\x00\x00\x00\x00\xc0\xa82\x02'</msg>
+<status status="PASS" starttime="20230119 14:27:22.484" endtime="20230119 14:27:22.485"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${duracao}</var>
+<arg>${duracao_local}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:22.486" level="INFO">${duracao} = </msg>
+<status status="PASS" starttime="20230119 14:27:22.485" endtime="20230119 14:27:22.486"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nome_do_protocolo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:22.486" level="INFO">${nome_do_protocolo} = UDP</msg>
+<status status="PASS" starttime="20230119 14:27:22.486" endtime="20230119 14:27:22.486"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${nome_do_protocolo}</var>
+<arg>ARP</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:22.486" level="INFO">${nome_do_protocolo} = ARP</msg>
+<status status="PASS" starttime="20230119 14:27:22.486" endtime="20230119 14:27:22.486"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nome_do_protocolo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:22.487" level="INFO">${nome_do_protocolo} = ARP</msg>
+<status status="PASS" starttime="20230119 14:27:22.487" endtime="20230119 14:27:22.487"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:22.475" endtime="20230119 14:27:22.487"/>
+</kw>
+<kw name="And the t-rex basic configuration is done">
+<kw name="Init" library="T-Rex_test">
+<arg>${packet_0}</arg>
+<arg>${packet_1}</arg>
+<arg>${velocidade}</arg>
+<status status="PASS" starttime="20230119 14:27:22.488" endtime="20230119 14:27:22.660"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:22.487" endtime="20230119 14:27:22.661"/>
+</kw>
+<kw name="When traffic is started through t-rex api">
+<kw name="Start Traffic" library="T-Rex_test">
+<arg>${duracao}</arg>
+<status status="PASS" starttime="20230119 14:27:22.661" endtime="20230119 14:27:32.798"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:22.661" endtime="20230119 14:27:32.798"/>
+</kw>
+<kw name="Then all traffic sent is received without dropped packets">
+<kw name="Get Lost Packets" library="T-Rex_test">
+<var>${lost_packets}</var>
+<msg timestamp="20230119 14:27:32.803" level="INFO">${lost_packets} = -18</msg>
+<status status="PASS" starttime="20230119 14:27:32.799" endtime="20230119 14:27:32.803"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${no_error}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:32.803" level="INFO">${no_error} = True</msg>
+<status status="PASS" starttime="20230119 14:27:32.803" endtime="20230119 14:27:32.803"/>
+</kw>
+<if>
+<branch type="IF" condition="${lost_packets} &gt; ${0}">
+<kw>
+<var>${no_error}=</var>
+<var>${False}</var>
+<status status="NOT RUN" starttime="20230119 14:27:32.804" endtime="20230119 14:27:32.804"/>
+</kw>
+<status status="NOT RUN" starttime="20230119 14:27:32.804" endtime="20230119 14:27:32.804"/>
+</branch>
+<status status="PASS" starttime="20230119 14:27:32.803" endtime="20230119 14:27:32.804"/>
+</if>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${no_error}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230119 14:27:32.804" endtime="20230119 14:27:32.804"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:32.799" endtime="20230119 14:27:32.805"/>
+</kw>
+<kw name="And we then disconnect">
+<kw name="Disconnect" library="T-Rex_test">
+<status status="PASS" starttime="20230119 14:27:32.805" endtime="20230119 14:27:32.807"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:32.805" endtime="20230119 14:27:32.807"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:22.474" endtime="20230119 14:27:32.807"/>
 </test>
-<test id="s1-t6" name="T-Rex ICMP Test" line="78">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20230117 14:40:38.674" endtime="20230117 14:40:38.675">Test execution stopped due to a fatal error.</status>
+<test id="s1-t6" name="T-Rex ICMP Test" line="70">
+<kw name="Given the ICMP packets are created" library="Test_ICMP">
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_0}</arg>
+<arg>${mac_porta_1}</arg>
+<msg timestamp="20230119 14:27:32.809" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:32.809" level="INFO">${ether} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.809" endtime="20230119 14:27:32.810"/>
+</kw>
+<kw name="Create Ipv4" library="packet_creator">
+<var>${ip}</var>
+<arg>${ip_porta_0}</arg>
+<arg>${ip_porta_1}</arg>
+<msg timestamp="20230119 14:27:32.810" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:32.811" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:32.810" endtime="20230119 14:27:32.811"/>
+</kw>
+<kw name="Create Icmp" library="packet_creator">
+<var>${icmp}</var>
+<arg>${8}</arg>
+<arg>${0}</arg>
+<msg timestamp="20230119 14:27:32.812" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:32.812" level="INFO">${icmp} = b'\x08\x00\xf7\xff\x00\x00\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.811" endtime="20230119 14:27:32.812"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${icmp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230119 14:27:32.813" level="INFO">${protocols} = [&lt;Ether  dst=00:e0:53:40:23:cb src=d0:00:6a:13:b1:9b |&gt;, &lt;IP  src=192.168.60.4 dst=192.168.60.5 |&gt;, &lt;ICMP  type=echo-request code=0 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:32.812" endtime="20230119 14:27:32.813"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_0}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20230119 14:27:32.814" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x01\x81\x86\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x08\x00\xf7\xff\x00\x00\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.813" endtime="20230119 14:27:32.814"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_0}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:32.816" level="INFO">${packet_0} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x01\x81\x86\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05\x08\x00\xf7\xff\x00\x00\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.814" endtime="20230119 14:27:32.816"/>
+</kw>
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_1}</arg>
+<arg>${mac_porta_0}</arg>
+<msg timestamp="20230119 14:27:32.817" level="INFO">${ether} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.816" endtime="20230119 14:27:32.817"/>
+</kw>
+<kw name="Create Ipv4" library="packet_creator">
+<var>${ip}</var>
+<arg>${ip_porta_1}</arg>
+<arg>${ip_porta_0}</arg>
+<msg timestamp="20230119 14:27:32.817" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04'</msg>
+<status status="PASS" starttime="20230119 14:27:32.817" endtime="20230119 14:27:32.818"/>
+</kw>
+<kw name="Create Icmp" library="packet_creator">
+<var>${icmp}</var>
+<arg>${8}</arg>
+<arg>${0}</arg>
+<msg timestamp="20230119 14:27:32.819" level="INFO">${icmp} = b'\x08\x00\xf7\xff\x00\x00\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.818" endtime="20230119 14:27:32.819"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${icmp}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230119 14:27:32.820" level="INFO">${protocols} = [&lt;Ether  dst=d0:00:6a:13:b1:9b src=00:e0:53:40:23:cb |&gt;, &lt;IP  src=192.168.60.5 dst=192.168.60.4 |&gt;, &lt;ICMP  type=echo-request code=0 |&gt;]</msg>
+<status status="PASS" starttime="20230119 14:27:32.819" endtime="20230119 14:27:32.820"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_1}</var>
+<arg>${protocols}</arg>
+<msg timestamp="20230119 14:27:32.821" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x01\x81\x86\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x08\x00\xf7\xff\x00\x00\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.820" endtime="20230119 14:27:32.821"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:32.822" level="INFO">${packet_1} = b'\xd0\x00j\x13\xb1\x9b\x00\xe0S@#\xcb\x08\x00E\x00\x00\x1c\x00\x01\x00\x00@\x01\x81\x86\xc0\xa8&lt;\x05\xc0\xa8&lt;\x04\x08\x00\xf7\xff\x00\x00\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:32.821" endtime="20230119 14:27:32.822"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${nome_do_protocolo}</var>
+<arg>ICMP</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:32.823" level="INFO">${nome_do_protocolo} = ICMP</msg>
+<status status="PASS" starttime="20230119 14:27:32.823" endtime="20230119 14:27:32.823"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nome_do_protocolo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230119 14:27:32.823" level="INFO">${nome_do_protocolo} = ICMP</msg>
+<status status="PASS" starttime="20230119 14:27:32.823" endtime="20230119 14:27:32.823"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:32.808" endtime="20230119 14:27:32.823"/>
+</kw>
+<kw name="And the t-rex basic configuration is done">
+<kw name="Init" library="T-Rex_test">
+<arg>${packet_0}</arg>
+<arg>${packet_1}</arg>
+<arg>${velocidade}</arg>
+<status status="PASS" starttime="20230119 14:27:32.824" endtime="20230119 14:27:32.996"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:32.824" endtime="20230119 14:27:32.996"/>
+</kw>
+<kw name="When traffic is started through t-rex api">
+<kw name="Start Traffic" library="T-Rex_test">
+<arg>${duracao}</arg>
+<status status="PASS" starttime="20230119 14:27:32.996" endtime="20230119 14:27:43.133"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:32.996" endtime="20230119 14:27:43.134"/>
+</kw>
+<kw name="Then all traffic sent is received without dropped packets">
+<kw name="Get Lost Packets" library="T-Rex_test">
+<var>${lost_packets}</var>
+<msg timestamp="20230119 14:27:43.138" level="INFO">${lost_packets} = -15</msg>
+<status status="PASS" starttime="20230119 14:27:43.134" endtime="20230119 14:27:43.138"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${no_error}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230119 14:27:43.138" level="INFO">${no_error} = True</msg>
+<status status="PASS" starttime="20230119 14:27:43.138" endtime="20230119 14:27:43.138"/>
+</kw>
+<if>
+<branch type="IF" condition="${lost_packets} &gt; ${0}">
+<kw>
+<var>${no_error}=</var>
+<var>${False}</var>
+<status status="NOT RUN" starttime="20230119 14:27:43.139" endtime="20230119 14:27:43.139"/>
+</kw>
+<status status="NOT RUN" starttime="20230119 14:27:43.139" endtime="20230119 14:27:43.139"/>
+</branch>
+<status status="PASS" starttime="20230119 14:27:43.138" endtime="20230119 14:27:43.139"/>
+</if>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${no_error}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230119 14:27:43.139" endtime="20230119 14:27:43.139"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:43.134" endtime="20230119 14:27:43.139"/>
+</kw>
+<kw name="And we then disconnect">
+<kw name="Disconnect" library="T-Rex_test">
+<status status="PASS" starttime="20230119 14:27:43.140" endtime="20230119 14:27:43.142"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:43.140" endtime="20230119 14:27:43.142"/>
+</kw>
+<status status="PASS" starttime="20230119 14:27:32.808" endtime="20230119 14:27:43.143"/>
 </test>
-<test id="s1-t7" name="T-Rex DNS Test" line="86">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20230117 14:40:38.676" endtime="20230117 14:40:38.677">Test execution stopped due to a fatal error.</status>
+<test id="s1-t7" name="T-Rex DNS Test" line="78">
+<kw name="Given the DNS packets are created" library="Test_DNS">
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_0}</arg>
+<arg>${mac_porta_1}</arg>
+<msg timestamp="20230119 14:27:43.144" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.145" level="INFO">${ether} = b'\x00\xe0S@#\xcb\xd0\x00j\x13\xb1\x9b\x90\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:43.144" endtime="20230119 14:27:43.145"/>
+</kw>
+<kw name="Create Ipv4" library="packet_creator">
+<var>${ip}</var>
+<arg>${ip_porta_0}</arg>
+<arg>${ip_porta_1}</arg>
+<msg timestamp="20230119 14:27:43.145" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.146" level="INFO">${ip} = b'E\x00\x00\x14\x00\x01\x00\x00@\x00\x81\x8f\xc0\xa8&lt;\x04\xc0\xa8&lt;\x05'</msg>
+<status status="PASS" starttime="20230119 14:27:43.145" endtime="20230119 14:27:43.146"/>
+</kw>
+<kw name="Create Udp" library="packet_creator">
+<var>${udp}</var>
+<arg>${1234}</arg>
+<arg>${53}</arg>
+<msg timestamp="20230119 14:27:43.147" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.148" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:27:43.148" level="INFO">${udp} = b'\x04\xd2\x005\x00\x08\x00\x00'</msg>
+<status status="PASS" starttime="20230119 14:27:43.146" endtime="20230119 14:27:43.148"/>
+</kw>
+<kw name="Create Dns" library="packet_creator">
+<var>${dns}</var>
+<msg timestamp="20230119 14:27:43.148" level="FAIL">NameError: name 'DNS' is not defined</msg>
+<status status="FAIL" starttime="20230119 14:27:43.148" endtime="20230119 14:27:43.148"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${udp}</arg>
+<arg>${dns}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:43.149" endtime="20230119 14:27:43.149"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_0}</var>
+<arg>${protocols}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:43.149" endtime="20230119 14:27:43.149"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_0}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:43.149" endtime="20230119 14:27:43.149"/>
+</kw>
+<kw name="Create Ether" library="packet_creator">
+<var>${ether}</var>
+<arg>${mac_porta_1}</arg>
+<arg>${mac_porta_0}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:43.149" endtime="20230119 14:27:43.149"/>
+</kw>
+<kw name="Create Ipv4" library="packet_creator">
+<var>${ip}</var>
+<arg>${ip_porta_1}</arg>
+<arg>${ip_porta_0}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:43.149" endtime="20230119 14:27:43.149"/>
+</kw>
+<kw name="Create Udp" library="packet_creator">
+<var>${udp}</var>
+<arg>${4321}</arg>
+<arg>${53}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:43.149" endtime="20230119 14:27:43.150"/>
+</kw>
+<kw name="Create Dns" library="packet_creator">
+<var>${dns}</var>
+<status status="NOT RUN" starttime="20230119 14:27:43.150" endtime="20230119 14:27:43.150"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${protocols}</var>
+<arg>${ether}</arg>
+<arg>${ip}</arg>
+<arg>${udp}</arg>
+<arg>${dns}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:43.150" endtime="20230119 14:27:43.150"/>
+</kw>
+<kw name="Assemble Protocols" library="packet_creator">
+<var>${packet_1}</var>
+<arg>${protocols}</arg>
+<status status="NOT RUN" starttime="20230119 14:27:43.150" endtime="20230119 14:27:43.150"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${packet_1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:43.150" endtime="20230119 14:27:43.150"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${nome_do_protocolo}</var>
+<arg>DNS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:43.150" endtime="20230119 14:27:43.150"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${nome_do_protocolo}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230119 14:27:43.150" endtime="20230119 14:27:43.150"/>
+</kw>
+<status status="FAIL" starttime="20230119 14:27:43.143" endtime="20230119 14:27:43.151"/>
+</kw>
+<kw name="And the t-rex basic configuration is done">
+<status status="NOT RUN" starttime="20230119 14:27:43.151" endtime="20230119 14:27:43.151"/>
+</kw>
+<kw name="When traffic is started through t-rex api">
+<status status="NOT RUN" starttime="20230119 14:27:43.151" endtime="20230119 14:27:43.151"/>
+</kw>
+<kw name="Then all traffic sent is received without dropped packets">
+<status status="NOT RUN" starttime="20230119 14:27:43.152" endtime="20230119 14:27:43.152"/>
+</kw>
+<kw name="And we then disconnect">
+<status status="NOT RUN" starttime="20230119 14:27:43.152" endtime="20230119 14:27:43.152"/>
+</kw>
+<status status="FAIL" starttime="20230119 14:27:43.143" endtime="20230119 14:27:43.152">NameError: name 'DNS' is not defined</status>
 </test>
 <doc>Arquivo para testar o T-Rex</doc>
-<status status="FAIL" starttime="20230117 14:40:32.594" endtime="20230117 14:40:38.678"/>
+<status status="FAIL" starttime="20230119 14:26:50.689" endtime="20230119 14:27:43.153"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="7" skip="0">All Tests</stat>
+<stat pass="5" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
 </tag>
 <suite>
-<stat pass="0" fail="7" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="5" fail="2" skip="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230117 14:40:33.604" level="ERROR">Error in library 'T-Rex_test': Adding keyword 'Dns Get Str' failed: Keyword with same name defined multiple times.</msg>
-<msg timestamp="20230117 14:40:33.733" level="ERROR">Error in library 'packet_creator': Adding keyword 'Dns Get Str' failed: Keyword with same name defined multiple times.</msg>
-<msg timestamp="20230117 14:40:33.792" level="ERROR">Error in file '/home/datacom28/Downloads/robot_framework_test-main/STL/Test.robot' on line 12: Resource file 'Test_DHCPv6.robot' does not exist.</msg>
-<msg timestamp="20230117 14:40:33.846" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
-<msg timestamp="20230117 14:40:33.851" level="WARN">Calling str(pkt) on Python 3 makes no sense!</msg>
-<msg timestamp="20230117 14:40:33.857" level="WARN">more Calling str(pkt) on Python 3 makes no sense!</msg>
-<msg timestamp="20230117 14:40:33.859" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
-<msg timestamp="20230117 14:40:33.907" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
-<msg timestamp="20230117 14:40:37.065" level="WARN">more No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:26:51.443" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:26:51.444" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:26:51.446" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:26:51.446" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:26:51.457" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:27:01.797" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:01.798" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:01.800" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:01.800" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:27:01.807" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
+<msg timestamp="20230119 14:27:12.135" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:12.136" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:12.143" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:22.476" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:22.477" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:22.479" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:32.809" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:32.810" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:32.812" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.144" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.145" level="WARN">Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.147" level="WARN">more Unless called manually, this could indicate deprecated use. Should be changed to bytes(self)</msg>
+<msg timestamp="20230119 14:27:43.148" level="WARN">No IP underlayer to compute checksum. Leaving null.</msg>
 </errors>
 </robot>

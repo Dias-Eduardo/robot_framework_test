@@ -1,7 +1,6 @@
-T_REX_VERSION = "2.87"
 
 import sys
-sys.path.append('/opt/trex/v' + T_REX_VERSION + '/automation/trex_control_plane/interactive/trex/examples/stl') # stl_path.py
+sys.path.append('/opt/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/stl') # stl_path.py
 
 import stl_path
 from trex.stl.api import *
@@ -114,5 +113,3 @@ def robot_print(msg):
 def disconnect():
     global c
     c.disconnect()
-
-
