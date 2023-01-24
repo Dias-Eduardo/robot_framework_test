@@ -11,6 +11,7 @@ Resource   Test_IGMP.robot
 Resource   Test_DHCP.robot
 
 *** Variables ***
+# Os endereços MAC e IP das interfaces de rede que serão utilizadas nos testes. Neste teste possuimos apenas duas interfaces.
 ${mac_porta_0}    d0:00:6a:13:b1:9b
 ${ip_porta_0}    192.168.60.4
 ${ipv6_porta_0}    fe80::5733:621:5a6d:3100
@@ -21,7 +22,7 @@ ${ip_porta_1}    192.168.60.5
 ${ipv6_porta_1}    fe80::abfe:a53b:bf6f:8e08
 
 
-# Definir a velocidade e duracao de todos os testes | Trocar no futuro para testes terem velocidades e duracoes diferentes?
+# Definir a velocidade e duracao de todos os testes
 ${velocidade}    ${100}     # Em pacotes por segundo
 ${duracao}    ${10}    # Em segundos
 

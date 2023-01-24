@@ -1,4 +1,5 @@
 import sys
+# Utilizamos a biblioteca Scapy que é incluída junto ao T-rex. 
 sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy')
 sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy/contrib')
 sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy/layers')
@@ -12,7 +13,6 @@ import dhcp
 import dhcp6
 
 # Aqui criamos e definimos os pacotes a serem enviados com Scapy
-
 
 def create_ether(mac_src, mac_dst):
     return Ether(src=mac_src, dst=mac_dst)

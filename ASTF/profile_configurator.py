@@ -1,5 +1,5 @@
 
-
+# Aqui nós configuramos o profile que será depois carregado
 
 def http_config_file(ip_client, ip_server):
     configuration_string = '''
@@ -28,6 +28,6 @@ def register():
 '''
 
 
-    file = open('/opt/trex/v2.87/astf/http_simple.py', 'w+')
+    file = open('/opt/trex/trex-core/scripts/astf/http_simple.py', 'w+') # Trocar aqui caso path ao T-Rex seja diferente
     file.seek(0, os.SEEK_SET)   
     file.write(configuration_string)
