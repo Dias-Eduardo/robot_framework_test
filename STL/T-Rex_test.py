@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append('/opt/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/stl') # stl_path.py
+sys.path.append('/opt/trex-datacom/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/stl') # stl_path.py
 
 import stl_path
 from trex.stl.api import *

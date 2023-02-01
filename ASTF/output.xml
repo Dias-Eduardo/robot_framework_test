@@ -1,59 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.6.8 on linux)" generated="20221214 13:45:13.433" rpa="false" schemaversion="3">
-<suite id="s1" name="Test ASTF" source="/home/mpfeifer/Documentos/robot_framework_test/ASTF/Test_ASTF.robot">
-<test id="s1-t1" name="T-Rex HTTP Test" line="23">
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230201 15:07:49.128" rpa="false" schemaversion="3">
+<suite id="s1" name="Test ASTF" source="/opt/trex-datacom/robot_framework_test/ASTF/Test_ASTF.robot">
+<test id="s1-t1" name="T-Rex HTTP Test" line="21">
 <kw name="Given the HTTP comunication is configured" library="Test_HTTP">
 <kw name="Http Config File" library="profile_configurator">
 <arg>${ip_porta_0}</arg>
 <arg>${ip_porta_1}</arg>
-<status status="PASS" starttime="20221214 13:45:14.293" endtime="20221214 13:45:14.294"/>
+<status status="PASS" starttime="20230201 15:07:49.628" endtime="20230201 15:07:49.636"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${profile_name}</var>
 <arg>http_simple.py</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221214 13:45:14.294" level="INFO">${profile_name} = http_simple.py</msg>
-<status status="PASS" starttime="20221214 13:45:14.294" endtime="20221214 13:45:14.295"/>
+<msg timestamp="20230201 15:07:49.636" level="INFO">${profile_name} = http_simple.py</msg>
+<status status="PASS" starttime="20230201 15:07:49.636" endtime="20230201 15:07:49.636"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${profile_name}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221214 13:45:14.295" level="INFO">${profile_name} = http_simple.py</msg>
-<status status="PASS" starttime="20221214 13:45:14.295" endtime="20221214 13:45:14.295"/>
+<msg timestamp="20230201 15:07:49.637" level="INFO">${profile_name} = http_simple.py</msg>
+<status status="PASS" starttime="20230201 15:07:49.636" endtime="20230201 15:07:49.637"/>
 </kw>
-<status status="PASS" starttime="20221214 13:45:14.293" endtime="20221214 13:45:14.295"/>
+<status status="PASS" starttime="20230201 15:07:49.627" endtime="20230201 15:07:49.637"/>
 </kw>
 <kw name="And the t-rex basic configuration is done">
 <kw name="Init" library="T-Rex_ASTF_test">
 <arg>${profile_name}</arg>
-<status status="PASS" starttime="20221214 13:45:14.296" endtime="20221214 13:45:14.666"/>
+<status status="PASS" starttime="20230201 15:07:49.638" endtime="20230201 15:07:50.027"/>
 </kw>
-<status status="PASS" starttime="20221214 13:45:14.296" endtime="20221214 13:45:14.666"/>
+<status status="PASS" starttime="20230201 15:07:49.637" endtime="20230201 15:07:50.027"/>
 </kw>
 <kw name="When traffic is started through t-rex api">
 <kw name="Start Traffic" library="T-Rex_ASTF_test">
 <arg>${multiplicador}</arg>
 <arg>${duracao}</arg>
-<status status="PASS" starttime="20221214 13:45:14.667" endtime="20221214 13:45:25.408"/>
+<status status="PASS" starttime="20230201 15:07:50.028" endtime="20230201 15:08:00.547"/>
 </kw>
-<status status="PASS" starttime="20221214 13:45:14.666" endtime="20221214 13:45:25.408"/>
+<status status="PASS" starttime="20230201 15:07:50.027" endtime="20230201 15:08:00.547"/>
 </kw>
 <kw name="Then all traffic sent is received without dropped packets">
-<kw name="Print Stats And Get Lost Packets" library="T-Rex_ASTF_test">
-<status status="PASS" starttime="20221214 13:45:25.409" endtime="20221214 13:45:25.420"/>
+<kw name="Print Stats And Check Error" library="T-Rex_ASTF_test">
+<var>${no_error}</var>
+<msg timestamp="20230201 15:08:00.555" level="INFO">${no_error} = True</msg>
+<status status="PASS" starttime="20230201 15:08:00.548" endtime="20230201 15:08:00.555"/>
 </kw>
-<status status="PASS" starttime="20221214 13:45:25.409" endtime="20221214 13:45:25.420"/>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${no_error}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230201 15:08:00.555" endtime="20230201 15:08:00.556"/>
+</kw>
+<status status="PASS" starttime="20230201 15:08:00.547" endtime="20230201 15:08:00.556"/>
 </kw>
 <kw name="And we then disconnect">
 <kw name="Disconnect" library="T-Rex_ASTF_test">
-<status status="PASS" starttime="20221214 13:45:25.421" endtime="20221214 13:45:25.424"/>
+<status status="PASS" starttime="20230201 15:08:00.556" endtime="20230201 15:08:00.558"/>
 </kw>
-<status status="PASS" starttime="20221214 13:45:25.420" endtime="20221214 13:45:25.424"/>
+<status status="PASS" starttime="20230201 15:08:00.556" endtime="20230201 15:08:00.559"/>
 </kw>
-<status status="PASS" starttime="20221214 13:45:14.292" endtime="20221214 13:45:25.424"/>
+<status status="PASS" starttime="20230201 15:07:49.627" endtime="20230201 15:08:00.561"/>
 </test>
 <doc>Arquivo para testar o modo Advanced Stateful T-Rex</doc>
-<status status="PASS" starttime="20221214 13:45:13.434" endtime="20221214 13:45:25.426"/>
+<status status="PASS" starttime="20230201 15:07:49.129" endtime="20230201 15:08:00.562"/>
 </suite>
 <statistics>
 <total>

@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append('/opt/trex/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/astf') # astf_path.py
+sys.path.append('/opt/trex-datacom/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/astf') # astf_path.py
 
 
 import astf_path
@@ -9,10 +9,11 @@ from trex.astf.api import *
 import os
 
 from robot.api import logger # Imprimir para o console com o Robot Framework
-
+from datetime import datetime
 
 c = 0
 passed = 0
+duracao_teste_real = 0
 
 
 def init(profile_name):
@@ -43,6 +44,7 @@ def init(profile_name):
 
 def start_traffic(multiplicador, duracao):
     global c
+    global duracao_teste_real
 
     robot_print("\n#\tComecando trafego...")
     horario_inicio = datetime.now() # Pegamos o horario de inicio do trafego
@@ -53,51 +55,59 @@ def start_traffic(multiplicador, duracao):
     c.wait_on_traffic() # Esperamos ate que o trafego seja concluido
 
     horario_termino = datetime.now() # Pegamos o horario de termino do teste
-    robot_print("#\tTeste terminado as " + str(horario_termino)) 
-    duracao_teste_real = horario_termino - horario_inicio
-    robot_print("\n#\tDuracao do teste: " + duracao_teste_real)
+    robot_print("#\tTeste terminado as " + str(horario_termino))
+
+    duracao_teste_real = horario_termino - horario_inicio # Calculamos o tempo do teste
 
 
-def print_stats_and_get_lost_packets():
+def print_stats_and_check_error():
     global c
     stats = c.get_stats()
     # robot_print(stats) # Para imprimir todo o dict com todas as estatisticas de disponiveis
-
-    lat_stats = c.get_latency_stats()
-
-    # robot_print(lat_stats) # Para imprimir todo o dict com todas as estatisticas de latencia disponiveis
-
+    
     client_stats = stats['traffic']['client']
     server_stats = stats['traffic']['server']
-
-    tcp_client_sent, tcp_server_recv = client_stats.get('tcps_sndbyte', 0), server_stats.get('tcps_rcvbyte', 0)
-    tcp_server_sent, tcp_client_recv = server_stats.get('tcps_sndbyte', 0), client_stats.get('tcps_rcvbyte', 0)
-
-    udp_client_sent, udp_server_recv = client_stats.get('udps_sndbyte', 0), server_stats.get('udps_rcvbyte', 0)
-    udp_server_sent, udp_client_recv = server_stats.get('udps_sndbyte', 0), client_stats.get('udps_rcvbyte', 0)
-
+    robot_print(client_stats) # Para imprimir o dict com todas as estatisticas do cliente disponiveis
+    robot_print(server_stats) # Para imprimir o dict com todas as estatisticas do servidor disponiveis
+       
+    robot_print("\n#\tDuracao do teste: " + str(duracao_teste_real))
     
-    # Caso o número de pacotes enviados pelo cliente e recebidos pelo servidor, ou vice-versa, sejam diferentes, o teste irá falhar
-    if (tcp_client_sent != tcp_server_recv):
-        robot_print("\n#\tMuitos pacotes TCP perdidos: cliente mandou %s bytes e o servidor recebeu %s bytes" % (tcp_client_sent, tcp_server_recv))
-        return False;
-    elif (tcp_server_sent != tcp_client_recv):
-        robot_print("\n#\tMuitos pacotes TCP perdidos: servidor mandou %s bytes e o cliente recebeu %s bytes" % (tcp_server_recv, tcp_client_sent))
-        return False;
-    elif (udp_client_sent != udp_server_sent):
-        robot_print("\n#\tMuitos pacotes UDP perdidos: cliente mandou %s bytes e o servidor recebeu %s bytes" % (udp_client_sent, udp_server_recv))
-        return False;
-    elif (udp_server_sent != udp_client_recv):
-        robot_print("\n#\tMuitos pacotes UDP perdidos: servidor mandou %s bytes e o cliente recebeu %s bytes" % (udp_server_sent, udp_client_recv))
-        return False;
+    robot_print("\n#\tEstatisticas do cliente:")
+    robot_print("#\t\tTentativas de conexão feitas: " + str(client_stats['tcps_connattempt']))
+    robot_print("#\t\tConexões feitas: " + str(client_stats['tcps_connects']))
+    robot_print("#\t\tConexões encerradas: " + str(client_stats['tcps_closed']))
+    robot_print("#\t\tBytes enviados: " + str(client_stats['tcps_sndbyte']))
+    robot_print("#\t\tBytes enviados confirmados: " + str(client_stats['tcps_sndbyte_ok']))
+    robot_print("#\t\tACKs enviados: " + str(client_stats['tcps_sndacks']))
+    robot_print("#\t\tACKs recebidos: " + str(client_stats['tcps_rcvackpack']))
+    robot_print("#\t\tPacotes enviados por segundo: " + str(client_stats['m_tx_pps_r']))
+    robot_print("#\t\tPacotes recebidos por segundo: " + str(client_stats['m_rx_pps_r']))
+    
+    robot_print("\n\n");
+    
+    robot_print("\n#\tEstatisticas do servidor:")
+    robot_print("#\t\tConexões aceitas: " + str(server_stats['tcps_accepts']))
+    robot_print("#\t\tConexões feitas: " + str(server_stats['tcps_connects']))
+    robot_print("#\t\tConexões encerradas: " + str(server_stats['tcps_closed']))
+    robot_print("#\t\tBytes enviados: " + str(server_stats['tcps_sndbyte']))
+    robot_print("#\t\tBytes enviados confirmados: " + str(server_stats['tcps_sndbyte_ok']))
+    robot_print("#\t\tACKs enviados: " + str(server_stats['tcps_sndacks']))
+    robot_print("#\t\tACKs recebidos: " + str(server_stats['tcps_rcvackpack']))
+    robot_print("#\t\tPacotes enviados por segundo: " + str(server_stats['m_tx_pps_r']))
+    robot_print("#\t\tPacotes recebidos por segundo: " + str(server_stats['m_rx_pps_r']))
+    
+    robot_print("\n\n");
+    
+    lat_stats = c.get_latency_stats()
 
-
-    robot_print(client_stats)
-
-    robot_print("\n\n\n");
-
-    robot_print(server_stats)
-
+    # robot_print(lat_stats) # Para imprimir todo o dict com todas as estatisticas de latencia disponiveis   
+   
+    
+    if client_stats['tcps_connattempt'] == client_stats['tcps_connects'] and client_stats['tcps_connects'] == client_stats['tcps_closed']:
+    	return True
+    else:
+    	return False
+    
 
 
 

@@ -12,7 +12,7 @@ ${ip_porta_1}    192.168.50.3
 
 
 # Definir a velocidade e duracao de todos os testes | Trocar no futuro para testes terem velocidades e duracoes diferentes?
-${multiplicador}    ${10}     # Multiplicador da velocidade
+${multiplicador}    ${1}     # Multiplicador da velocidade
 ${duracao}    ${10}    # Em segundos
 
 ${profile_name}    undefined
@@ -36,13 +36,8 @@ traffic is started through t-rex api
 
 
 all traffic sent is received without dropped packets
-    Print Stats And Get Lost Packets
-    # ${lost_packets}=    
-    # ${no_error}=    Set Variable    ${True}
-    # IF  ${lost_packets} > ${0}
-    #     ${no_error}=    ${False}
-    # END
-    # Should be True     ${no_error}
+    ${no_error}=	Print Stats And Check Error
+    Should be True     ${no_error}
 
 
 we then disconnect

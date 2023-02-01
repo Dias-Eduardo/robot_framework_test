@@ -1,8 +1,8 @@
 import sys
 # Utilizamos a biblioteca Scapy que é incluída junto ao T-rex. 
-sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy')
-sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy/contrib')
-sys.path.append('/opt/trex-core/scripts/external_libs/scapy-2.3.1/python3/scapy/layers')
+sys.path.append('/opt/trex-datacom/trex-core/scripts/external_libs/scapy-2.4.3/python3/scapy')
+sys.path.append('/opt/trex-datacom/trex-core/scripts/external_libs/scapy-2.4.3/python3/scapy/contrib')
+sys.path.append('/opt/trex-datacom/trex-core/scripts/external_libs/scapy-2.4.3/python3/scapy/layers')
 
 from robot.api import logger # Imprimir para o console com o Robot Framework
 
