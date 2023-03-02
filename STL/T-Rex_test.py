@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append('/opt/trex-datacom/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/stl') # stl_path.py
+sys.path.append('/opt/TRex-DATACOM/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/stl') # stl_path.py
 
 import stl_path
 from trex.stl.api import *
@@ -41,9 +41,9 @@ def init(packet_0, packet_1, velocidade):
     # Definimos o segundo objeto STLStream para modelar o nosso segundo fluxo, que irá da porta 1 para a porta 0.
     # A única diferença aqui é que usamos o parametro "isg" (Inter-Stream Gap) para definir um atraso entre os fluxos
     s2 = STLStream(packet = stl_pkt_1,
-                    isg = 1000,
-                    mode = STLTXCont(pps = velocidade),
-                    flow_stats = STLFlowLatencyStats(pg_id = 8))
+                   isg = 1000, 
+                  mode = STLTXCont(pps = velocidade),
+                   flow_stats = STLFlowLatencyStats(pg_id = 8))
     
     # Conectamos com o servidor que deve ter sido iniciado
     c.connect()                                                                

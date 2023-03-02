@@ -1,7 +1,6 @@
 ***Settings***
 Documentation    Arquivo para testar o T-Rex
 Library    T-Rex_test.py
-#Library    /opt/trex/v2.87/external_libs/scapy-2.4.3/scapy/layers/l2.py
 Resource   Test_UDP.robot
 Resource   Test_ICMP.robot
 Resource   Test_DNS.robot
@@ -12,15 +11,14 @@ Resource   Test_DHCP.robot
 
 *** Variables ***
 # Os endereços MAC e IP das interfaces de rede que serão utilizadas nos testes. Neste teste possuimos apenas duas interfaces.
-${mac_porta_0}    08:00:27:cf:c0:b4
+${mac_porta_0}    08:00:27:0e:83:59
 ${ip_porta_0}    192.168.50.2
-${ipv6_porta_0}    fe80::53f8:e38a:c8b3:d5bc
+${ipv6_porta_0}    fe80::1458:4107:ae3e:36dd
 
 
-${mac_porta_1}    08:00:27:64:1d:5c 
+${mac_porta_1}    08:00:27:4f:29:81
 ${ip_porta_1}    192.168.50.3
-${ipv6_porta_1}    fe80::375d:8152:eece:a0c3
-
+${ipv6_porta_1}    fe80::b7f3:7a7c:1586:2ee1
 
 # Definir a velocidade e duracao de todos os testes
 ${velocidade}    ${100}     # Em pacotes por segundo

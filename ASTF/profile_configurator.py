@@ -28,6 +28,6 @@ def register():
 '''
 
 
-    file = open('/opt/trex-datacom/trex-core/scripts/astf/http_simple.py', 'w+') # Trocar aqui caso path ao T-Rex seja diferente
+    file = open('/opt/TRex-DATACOM/trex-core/scripts/astf/http_simple.py', 'w+') # Trocar aqui caso path ao T-Rex seja diferente
     file.seek(0, os.SEEK_SET)   
     file.write(configuration_string)

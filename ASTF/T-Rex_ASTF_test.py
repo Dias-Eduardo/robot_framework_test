@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append('/opt/trex-datacom/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/astf') # astf_path.py
+sys.path.append('/opt/TRex-DATACOM/trex-core/scripts/automation/trex_control_plane/interactive/trex/examples/astf') # astf_path.py
 
 
 import astf_path
@@ -67,14 +67,13 @@ def print_stats_and_check_error():
     
     client_stats = stats['traffic']['client']
     server_stats = stats['traffic']['server']
-    robot_print(client_stats) # Para imprimir o dict com todas as estatisticas do cliente disponiveis
-    robot_print(server_stats) # Para imprimir o dict com todas as estatisticas do servidor disponiveis
+    # robot_print(client_stats) # Para imprimir o dict com todas as estatisticas do cliente disponiveis
+    # robot_print(server_stats) # Para imprimir o dict com todas as estatisticas do servidor disponiveis
        
     robot_print("\n#\tDuracao do teste: " + str(duracao_teste_real))
     
     robot_print("\n#\tEstatisticas do cliente:")
     robot_print("#\t\tTentativas de conexão feitas: " + str(client_stats['tcps_connattempt']))
-    robot_print("#\t\tConexões feitas: " + str(client_stats['tcps_connects']))
     robot_print("#\t\tConexões encerradas: " + str(client_stats['tcps_closed']))
     robot_print("#\t\tBytes enviados: " + str(client_stats['tcps_sndbyte']))
     robot_print("#\t\tBytes enviados confirmados: " + str(client_stats['tcps_sndbyte_ok']))
@@ -87,7 +86,6 @@ def print_stats_and_check_error():
     
     robot_print("\n#\tEstatisticas do servidor:")
     robot_print("#\t\tConexões aceitas: " + str(server_stats['tcps_accepts']))
-    robot_print("#\t\tConexões feitas: " + str(server_stats['tcps_connects']))
     robot_print("#\t\tConexões encerradas: " + str(server_stats['tcps_closed']))
     robot_print("#\t\tBytes enviados: " + str(server_stats['tcps_sndbyte']))
     robot_print("#\t\tBytes enviados confirmados: " + str(server_stats['tcps_sndbyte_ok']))
